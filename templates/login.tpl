@@ -1,15 +1,15 @@
-<?php $this->layout('home', ['titolo' => 'Esempio CRUD - login']) ?>
+<?php $this->layout('home', ['titolo' => 'Esempio CRUD - login']);?>
 
 <h1>Login</h1>
-<?php if(isset($login_fallito)):?>
+<?php if($login_fallito):?>
     <div class="toast toast-error">
         Credenziali non corrette, riprova.
     </div>
 <?php endif; ?>
 <form class="form" action="index.php" method="post">
     <div class="form-group">
-        <label class="form-label" for="username">Username</label>
-        <input class="form-input" type="text" id="username" placeholder="Username" name="username">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="text" id="email" placeholder="Email" name="email">
     </div>
     <div class="form-group">
         <label class="form-label" for="password">Password</label>

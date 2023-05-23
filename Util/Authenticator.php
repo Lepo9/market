@@ -22,7 +22,7 @@ class Authenticator{
             session_start();
     }
 
-    public static function getUser():array|null{
+    public static function getUser():array|bool{
         self::start();
         //Controllo se è in corso un tentativo di login
         //verificando la presenza dello username spedito tramite POST
@@ -31,17 +31,20 @@ class Authenticator{
             $password = $_POST['password'];
             //Verifica se le credenziali sono corrette
             $row = UserRepository::userAuthentication($email, $password);
-            //Se non sono valide ritorna false
-            if ($row != null) {
+            //Se non sono valide ritorna true
+            if ($row == null)
+                return true;
+            else{
                 //Memorizza nelle variabili di sessione lo user id e il
                 //displayed_name, ritornati dalla funzione precedente
                 $_SESSION['user_id'] = $row['id'];
                 $_SESSION['displayed_name'] = $row['nome'];
             }
         }
-        //Se non è attiva una sessione ritorna falso
+        //Se non è attiva una sessione ritorna null
         if (!isset($_SESSION['user_id']))
-                return null;
+                return false;
+        //ritorna session se l'utente è loggato
         return $_SESSION;
     }
 

@@ -11,7 +11,7 @@ class TradeRepository{
         try {
             //begin transaction
             $pdo->beginTransaction();
-            $sql = 'INSERT INTO oggetto (id_offerente) VALUES (:id_utente)';
+            $sql = 'INSERT INTO oggetto (id_offerente, nome) VALUES (:id_utente, "Nuovo oggetto")';
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
                     'id_utente' => $id_utente
@@ -83,5 +83,14 @@ class TradeRepository{
     }
 
 
+    //ottengo tutti gli oggetti non ancora scambiati
+    public static function getOggetti(): array{
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT * FROM oggetto WHERE data_scambio IS NULL';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
 
 }
