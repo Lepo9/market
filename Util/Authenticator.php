@@ -38,7 +38,6 @@ class Authenticator{
                 //Memorizza nelle variabili di sessione lo user id e il
                 //displayed_name, ritornati dalla funzione precedente
                 $_SESSION['user_id'] = $row['id'];
-                $_SESSION['displayed_name'] = $row['nome'];
             }
         }
         //Se non è attiva una sessione ritorna null

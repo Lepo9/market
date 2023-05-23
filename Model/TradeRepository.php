@@ -84,9 +84,9 @@ class TradeRepository{
 
 
     //ottengo tutti gli oggetti non ancora scambiati
-    public static function getOggetti(): array{
+    public static function getOggettiDisponibili(): array{
         $pdo = Connection::getInstance();
-        $sql = 'SELECT * FROM oggetto WHERE data_scambio IS NULL';
+        $sql = 'SELECT * FROM oggetti_disponibili order by data_offerta desc';
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $rows = $stmt->fetchAll();

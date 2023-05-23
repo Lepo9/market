@@ -22,7 +22,6 @@ if (!isset($user['user_id'])){
 
 //ottengo l'id dell'utente e il suo nome
 $id_user = $user['user_id'];
-$displayed_name = $user['displayed_name'];
 
 //nel caso si voglia fare il logout
 if (isset($_GET['action'])){
@@ -34,12 +33,7 @@ if (isset($_GET['action'])){
 }
 
 
-
-
-
-
-
-
-echo $template->render('crud', [
-
+echo $template->render('index', [
+    'oggetti_disponibili' => TradeRepository::getOggettiDisponibili(),
+    'utente' => TradeRepository::getUtente($id_user),
 ]);

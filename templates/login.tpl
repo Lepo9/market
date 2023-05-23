@@ -1,4 +1,11 @@
-<?php $this->layout('home', ['titolo' => 'Esempio CRUD - login']);?>
+<?php
+/**
+ * Questo commento serve solo a eliminare l'indicazione di errore
+ * @var $login_fallito
+ */
+?>
+
+<?php $this->layout('home', ['titolo' => 'Login']);?>
 
 <h1>Login</h1>
 <?php if($login_fallito):?>

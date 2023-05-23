@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="commit">
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="login">
+      <change afterPath="$PROJECT_DIR$/img/chat_FILL0_wght400_GRAD0_opsz48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/TradeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TradeRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/Authenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Authenticator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/crud.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crud.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +67,9 @@
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\templates" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\img" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -77,7 +81,7 @@
       <updated>1683613622280</updated>
       <workItem from="1683613624077" duration="143000" />
       <workItem from="1683613789847" duration="1654000" />
-      <workItem from="1684822843578" duration="4225000" />
+      <workItem from="1684822843578" duration="8395000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -100,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684824316041</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="login">
+      <created>1684827384509</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684827384509</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +130,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="login" />
+    <option name="LAST_COMMIT_MESSAGE" value="login" />
   </component>
 </project>
