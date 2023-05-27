@@ -11,10 +11,11 @@ class TradeRepository{
         try {
             //begin transaction
             $pdo->beginTransaction();
-            $sql = 'INSERT INTO oggetto (id_offerente, nome) VALUES (:id_utente, "Nuovo oggetto")';
+            $sql = 'INSERT INTO oggetto (id_offerente, nome) VALUES (:id_utente, :nome)';
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
-                    'id_utente' => $id_utente
+                    'id_utente' => $id_utente,
+                    'nome'  => 'Nuovo oggetto'
                 ]
             );
             //Ritorna l'id dell'oggetto appena creato
@@ -31,7 +32,7 @@ class TradeRepository{
 
     public static function getOggetto(int $id): array{
         $pdo = Connection::getInstance();
-        $sql = 'SELECT oggetto.id as id, nome, oggetto.descrizione as descrizione, immagine,  data_offerta, data_scambio, categoria.descrizione as categoria FROM oggetto, categoria WHERE categoria.id = id_categoria and oggetto.id=:id';
+        $sql = 'SELECT oggetto.id as id, nome, oggetto.descrizione as descrizione, id_offerente, id_richiedente, immagine,  data_offerta, data_scambio, categoria.descrizione as categoria FROM oggetto, categoria WHERE categoria.id = id_categoria and oggetto.id=:id';
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
                 'id' => $id,
@@ -40,6 +41,21 @@ class TradeRepository{
         $row = $stmt->fetch();
         return $row;
     }
+
+    //ottiene i dati di una persona
+    public static function getUtente(int $id): array{
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT id, nome, cognome, email, gettoni FROM utente WHERE id=:id';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'id' => $id,
+            ]
+        );
+        $row = $stmt->fetch();
+        return $row;
+    }
+
+
 
     public static function setOggetto (int $id, string $nome, string $descrizione, string $immagine, int $id_categoria): bool{
         $pdo = Connection::getInstance();
@@ -84,21 +100,26 @@ class TradeRepository{
         return $row['descrizione'];
     }
 
-    public static function getUtente(int $id): array{
-        $pdo = Connection::getInstance();
-        $sql = 'SELECT id, nome, cognome, email, gettoni FROM utente WHERE id = :id';
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-                'id' => $id
-            ]
-        );
-        $row = $stmt->fetch();
-        return $row;
-    }
-
 
     public static function newMessaggio(int $id_mittente, int $id_destinatario, string $testo, int $id_oggetto): bool{
         $pdo = Connection::getInstance();
+        //inserisce il messaggio se non è ancora stato inserito
+        //se il messaggio è nullo
+        if ($testo == '')
+            return false;
+        $sql = 'SELECT id FROM messaggio WHERE id_mittente = :id_mittente AND id_destinatario = :id_destinatario AND testo = :testo AND id_oggetto = :id_oggetto';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'id_mittente' => $id_mittente,
+                'id_destinatario' => $id_destinatario,
+                'testo' => $testo,
+                'id_oggetto' => $id_oggetto,
+            ]
+        );
+        $row = $stmt->fetch();
+        if ($row != null)
+            return false;
+        //inserisce il messaggio
         $sql = 'INSERT INTO messaggio (id_mittente, id_destinatario, testo, id_oggetto) VALUES (:id_mittente, :id_destinatario, :testo, :id_oggetto)';
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
@@ -116,7 +137,7 @@ class TradeRepository{
     //funzione che permette di ottenere i messaggi relativi ad un oggetto
     public static function getMessaggi(int $id_oggetto): array{
         $pdo = Connection::getInstance();
-        $sql = 'SELECT messaggio.id as id, id_mittente, id_destinatario, testo, messaggio.data as data, nome, cognome FROM messaggio, utente WHERE id_oggetto = :id_oggetto and utente.id = messaggio.id_mittente';
+        $sql = 'SELECT messaggio.id as id, id_mittente, id_destinatario, testo, messaggio.data as data FROM messaggio WHERE id_oggetto = :id_oggetto ORDER BY messaggio.data ASC';
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
                 'id_oggetto' => $id_oggetto,
@@ -132,6 +153,9 @@ class TradeRepository{
     public static function buyOggetto(int $id_oggetto, int $id_compratore, int $id_venditore): bool{
         $pdo = Connection::getInstance();
         try {
+            //id devono essere diversi
+            if ($id_compratore == $id_venditore)
+                return false;
             //begin transaction
             $pdo->beginTransaction();
             $sql = 'UPDATE oggetto SET id_richiedente = :id_compratore, data_scambio = NOW() WHERE id = :id_oggetto';
@@ -165,11 +189,27 @@ class TradeRepository{
 
 
     //ottengo tutti gli oggetti non ancora scambiati
-    public static function getOggettiDisponibili(): array{
+    public static function getOggettiDisponibili(int $id_current_user): array{
         $pdo = Connection::getInstance();
-        $sql = 'SELECT * FROM oggetti_disponibili order by data_offerta desc';
+        $sql = 'SELECT * FROM oggetti_disponibili WHERE id_utente != :idu order by data_offerta desc';
         $stmt = $pdo->prepare($sql);
-        $stmt->execute();
+        $stmt->execute([
+                'idu' => $id_current_user
+            ]
+        );
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
+
+    public static function getMieiOggetti(int $id_user)
+    {
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT * FROM ogg_off WHERE id_offerente = :idu order by data_offerta desc';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'idu' => $id_user
+            ]
+        );
         $rows = $stmt->fetchAll();
         return $rows;
     }
