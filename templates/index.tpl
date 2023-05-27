@@ -8,7 +8,7 @@
 
 <?php $this->layout('home', ['titolo' => 'Market']);?>
 
-<h4>Benvenuto <?php echo $utente['nome'] ?></h4>
+<h4>Benvenut* <?php echo $utente['nome'] ?></h4>
 <p>Il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
 
 <div class="divider"></div>

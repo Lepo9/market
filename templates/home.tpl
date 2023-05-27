@@ -14,6 +14,26 @@
     <title><?=$this->e($titolo)?></title>
 </head>
 <body>
+<div class="divider"></div>
+<header class="navbar">
+    <section class="navbar-section"></section>
+    <?php if($titolo != 'Market'):?>
+    <section class="navbar-center">
+        <form action=".">
+            <button class="btn m-2">Back</button>
+        </form>
+    </section>
+    <?php endif;?>
+    <?php if($titolo != 'Login'):?>
+        <section class="navbar-center">
+            <form action="." method="get">
+                <input type="hidden" value="logout" name="action">
+                <button class="btn m-2 btn-error">Logout</button>
+            </form>
+        </section>
+    <?php endif;?>
+    <section class="navbar-section"></section>
+</header>
 <div class="container grid-lg">
 <!--Questa parte sarà sempre così e serve a includere
 il template che contiene il contenuto vero e proprio-->
