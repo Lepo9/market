@@ -214,4 +214,39 @@ class TradeRepository{
         return $rows;
     }
 
+    //ottiene tutti i messaggi ricevuti o mandati da un utente per un oggetto
+    public static function getMessaggiUtente(int $id_oggetto, int $id_user): array{
+        //prendo tutti gli utenti che hanno mandato un messaggio per l'oggetto
+        //prendo nome, cognome ed id
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT DISTINCT utente.id as id, nome, cognome FROM utente, messaggio WHERE utente.id = messaggio.id_mittente AND id_oggetto = :id_oggetto AND id_destinatario = :id_user';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'id_oggetto' => $id_oggetto,
+                'id_user' => $id_user
+            ]
+        );
+        $rows = $stmt->fetchAll();
+        $utenti = array();
+        foreach ($rows as $row){
+            $utente = array();
+            $utente['id'] = $row['id'];
+            $utente['nome'] = $row['nome'];
+            $utente['cognome'] = $row['cognome'];
+            $utente['messaggi'] = array();
+            $utenti.push($utente);
+        }
+        //per ogni utente prendo i messaggi
+        foreach ($utenti as $utente) {
+            $sql = 'SELECT * FROM messaggio WHERE id_oggetto = :id_oggetto AND (id_mittente = :id_utente OR id_destinatario = :id_utente)';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                'id_oggetto' => $id_oggetto,
+                'id_utente' => $utente['id'],
+            ]);
+            $rows = $stmt->fetchAll();
+            $utente['messaggi'] = $rows;
+        }
+        return $utenti;
+    }
 }

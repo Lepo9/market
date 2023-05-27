@@ -40,7 +40,6 @@
                 <form method="get" action=".">
                     <input type="hidden" name="action" value="obg">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
-                    <input type="hidden" name="id_offerente" value="<?= $utente['id']?>">
                     <button class="btn btn-sm"><i class="icon icon-message"></i></button>
                 </form>
             </td>

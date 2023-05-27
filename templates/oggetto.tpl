@@ -9,6 +9,9 @@
 
 <?php $this->layout('home', ['titolo' => 'Oggetto']);?>
 
+<?php if($utente['id'] != $oggetto['id_offerente']): ?>
+    <h1>AH! Furbetto! Non sei autorizzato a vedere questa pagina! IHIHIH!</h1>
+<?php else: ?>
 
 
         <h1><?php echo $oggetto['nome'] ?></h1>
@@ -27,9 +30,11 @@
 
 
 
+
 <?php if ($oggetto['descrizione'] != null): ?>
     <p><?php echo $oggetto['descrizione']?></p>
 <?php endif; ?>
 
 <div class="divider"></div>
 
+<?php endif; ?>
