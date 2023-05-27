@@ -50,6 +50,27 @@ if (isset($_GET['action'])){
                 'offerente' => TradeRepository::getUtente($id_destinatario),
                 'utente' => TradeRepository::getUtente($id_user),
                 'canBuy' => TradeRepository::canBuy($id_user),
+                'messaggi' => TradeRepository::getMessaggi($id_oggetto)
+            ]);
+            exit(0);
+            break;
+        case 'my_obg':
+            echo $template->render('miei_oggetti',[
+                'oggetti' => TradeRepository::getMieiOggetti($id_user),
+                'utente' => TradeRepository::getUtente($id_user)
+            ]);
+            exit(0);
+            break;
+        case 'obg':
+            $oggetto = TradeRepository::getOggetto($_GET['id_oggetto']);
+            $acquirente = false;
+            if ($oggetto['id_richiedente'] != null){
+                $acquirente = TradeRepository::getUtente($oggetto['id_richiedente']);
+            }
+            echo $template->render('oggetto',[
+                'oggetto' => $oggetto,
+                'acquirente' => $acquirente,
+                'utente' => TradeRepository::getUtente($id_user),
             ]);
             exit(0);
             break;
@@ -58,7 +79,7 @@ if (isset($_GET['action'])){
 
 
 echo $template->render('index', [
-    'oggetti_disponibili' => TradeRepository::getOggettiDisponibili(),
+    'oggetti_disponibili' => TradeRepository::getOggettiDisponibili($id_user),
     'utente' => TradeRepository::getUtente($id_user),
 ]);
 
