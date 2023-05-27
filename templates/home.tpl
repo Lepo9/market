@@ -17,14 +17,26 @@
 <div class="divider"></div>
 <header class="navbar">
     <section class="navbar-section"></section>
-    <?php if($titolo != 'Market'):?>
-    <section class="navbar-center">
-        <form action=".">
-            <button class="btn m-2">Back</button>
-        </form>
-    </section>
-    <?php endif;?>
+
+
     <?php if($titolo != 'Login'):?>
+        <?php if($titolo != 'Market'):?>
+            <section class="navbar-center">
+                <form action=".">
+                    <button class="btn m-2">Back</button>
+                </form>
+            </section>
+        <?php endif;?>
+
+        <?php if($titolo != 'I miei oggetti'):?>
+            <section class="navbar-center">
+                <form action="." method="get">
+                    <input type="hidden" value="my_obg" name="action">
+                    <button class="btn m-2">I miei oggetti in vendita</button>
+                </form>
+            </section>
+        <?php endif;?>
+
         <section class="navbar-center">
             <form action="." method="get">
                 <input type="hidden" value="logout" name="action">

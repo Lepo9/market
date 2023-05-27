@@ -54,10 +54,23 @@ if (isset($_GET['action'])){
             ]);
             exit(0);
             break;
-        case 'miei_oggetti':
+        case 'my_obg':
             echo $template->render('miei_oggetti',[
                 'oggetti' => TradeRepository::getMieiOggetti($id_user),
                 'utente' => TradeRepository::getUtente($id_user)
+            ]);
+            exit(0);
+            break;
+        case 'obg':
+            $oggetto = TradeRepository::getOggetto($_GET['id_oggetto']);
+            $acquirente = false;
+            if ($oggetto['id_richiedente'] != null){
+                $acquirente = TradeRepository::getUtente($oggetto['id_richiedente']);
+            }
+            echo $template->render('oggetto',[
+                'oggetto' => $oggetto,
+                'acquirente' => $acquirente,
+                'utente' => TradeRepository::getUtente($id_user),
             ]);
             exit(0);
             break;

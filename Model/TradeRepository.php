@@ -32,7 +32,7 @@ class TradeRepository{
 
     public static function getOggetto(int $id): array{
         $pdo = Connection::getInstance();
-        $sql = 'SELECT oggetto.id as id, nome, oggetto.descrizione as descrizione, immagine,  data_offerta, data_scambio, categoria.descrizione as categoria FROM oggetto, categoria WHERE categoria.id = id_categoria and oggetto.id=:id';
+        $sql = 'SELECT oggetto.id as id, nome, oggetto.descrizione as descrizione, id_offerente, id_richiedente, immagine,  data_offerta, data_scambio, categoria.descrizione as categoria FROM oggetto, categoria WHERE categoria.id = id_categoria and oggetto.id=:id';
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
                 'id' => $id,
@@ -41,6 +41,21 @@ class TradeRepository{
         $row = $stmt->fetch();
         return $row;
     }
+
+    //ottiene i dati di una persona
+    public static function getUtente(int $id): array{
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT id, nome, cognome, email, gettoni FROM utente WHERE id=:id';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'id' => $id,
+            ]
+        );
+        $row = $stmt->fetch();
+        return $row;
+    }
+
+
 
     public static function setOggetto (int $id, string $nome, string $descrizione, string $immagine, int $id_categoria): bool{
         $pdo = Connection::getInstance();
@@ -83,18 +98,6 @@ class TradeRepository{
         );
         $row = $stmt->fetch();
         return $row['descrizione'];
-    }
-
-    public static function getUtente(int $id): array{
-        $pdo = Connection::getInstance();
-        $sql = 'SELECT id, nome, cognome, email, gettoni FROM utente WHERE id = :id';
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-                'id' => $id
-            ]
-        );
-        $row = $stmt->fetch();
-        return $row;
     }
 
 
@@ -198,10 +201,10 @@ class TradeRepository{
         return $rows;
     }
 
-    public static function getMieiOggetti(mixed $id_user)
+    public static function getMieiOggetti(int $id_user)
     {
         $pdo = Connection::getInstance();
-        $sql = 'SELECT oggetto.id as id, oggetto.nome as nome, data_offerta, data_scambio, categoria.s FROM oggetto, utente, categoria WHERE id_richiedente = utente.id order by data_offerta desc';
+        $sql = 'SELECT * FROM ogg_off WHERE id_offerente = :idu order by data_offerta desc';
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
                 'idu' => $id_user
