@@ -22,9 +22,7 @@
     <?php if($titolo != 'Login'):?>
         <?php if($titolo != 'Market'):?>
             <section class="navbar-center">
-                <form action=".">
-                    <button class="btn m-2">Home</button>
-                </form>
+                <a href="."><button class="btn m-2">Home</button></a>
             </section>
         <?php endif;?>
 
@@ -35,10 +33,8 @@
         <?php endif;?>
 
         <section class="navbar-center">
-            <form action="." method="get">
-                <input type="hidden" value="logout" name="action">
-                <button class="btn m-2 btn-error">Logout</button>
-            </form>
+            <a href="./?action=logout"><button class="btn m-2 btn-error">Logout</button></a>
+
         </section>
     <?php endif;?>
     <section class="navbar-section"></section>
