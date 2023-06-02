@@ -26,7 +26,7 @@
     <div class="column">
         <p><?= $utente['nome'] ?>, il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
         <?php if ($canBuy): ?>
-            <form class="form-horizontal" action="." method="post">
+            <form class="form-horizontal" action="./action.php" method="post">
                 <div class="form-group">
                     <div class="col-9 col-sm-12">
                         <label class="form-label" for="input-example-1">Hai abbastanza gettoni per comprare l'oggetto. Ricordati che ti costerà un gettone!</label>
@@ -34,7 +34,6 @@
                     <div class="col-3 col-sm-12">
                         <input type="hidden" name="action" value="compra">
                         <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id'] ?>">
-                        <input type="hidden" name="id_offerente" value="<?php echo $offerente['id'] ?>">
                         <input class="button btn-lg" type="submit" value="Compra!">                    </div>
                 </div>
             </form>

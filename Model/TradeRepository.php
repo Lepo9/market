@@ -147,12 +147,35 @@ class TradeRepository{
         return $rows;
     }
 
+    //l'oggetto è ancora vendibile?
+    public static function isVendibile(int $id_oggetto): bool{
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT id_richiedente FROM oggetto WHERE id = :id_oggetto';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'id_oggetto' => $id_oggetto,
+            ]
+        );
+        $row = $stmt->fetch();
+        if ($row['id_richiedente'] == null)
+            return true;
+        return false;
+    }
 
     //funzione che permette di comprare un oggetto
     //verrà sottratto un gettone al compratore e aggiunto uno al venditore
-    public static function buyOggetto(int $id_oggetto, int $id_compratore, int $id_venditore): bool{
+    public static function buyOggetto(int $id_oggetto, int $id_compratore): bool{
         $pdo = Connection::getInstance();
         try {
+            //ottengo l'id del venditore
+            $sql = 'SELECT id_offerente FROM oggetto WHERE id = :id_oggetto';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                    'id_oggetto' => $id_oggetto,
+                ]
+            );
+            $row = $stmt->fetch();
+            $id_venditore = $row['id_offerente'];
             //id devono essere diversi
             if ($id_compratore == $id_venditore)
                 return false;

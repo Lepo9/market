@@ -30,7 +30,7 @@ if (!isset($id_oggetto)) {
 //recupero l'oggetto dal db
 $oggetto = TradeRepository::getOggetto($id_oggetto);
 //se non esiste, reindirizzo alla home
-if (!$oggetto) {
+if (!$oggetto || $oggetto['data_scambio'] != null){
     header('Location: index.php');
     exit;
 }
