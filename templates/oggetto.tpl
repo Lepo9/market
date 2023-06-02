@@ -4,11 +4,15 @@
  * @var $oggetto
  * @var $acquirente
  * @var $utente
+ * @var $chats
  */
 ?>
 
 <?php $this->layout('home', ['titolo' => 'Oggetto']);?>
 
+<?php if($utente['id'] != $oggetto['id_offerente']): ?>
+    <h1>AH! Furbetto! Non sei autorizzato a vedere questa pagina! IHIHIH!</h1>
+<?php else: ?>
 
 
         <h1><?php echo $oggetto['nome'] ?></h1>
@@ -27,9 +31,38 @@
 
 
 
+
 <?php if ($oggetto['descrizione'] != null): ?>
     <p><?php echo $oggetto['descrizione']?></p>
 <?php endif; ?>
 
 <div class="divider"></div>
 
+<h3>Questi sono i messaggi che i vari utenti ti hanno scritto</h3>
+
+<?php if ($chats != false): ?>
+    <?php foreach ($chats as $chat): ?>
+            <h5>Chat con <?php echo $chat['nome'] ?> <?php echo $chat['cognome'] ?></h5>
+
+            <?php foreach ($chat['messaggi'] as $messaggio): ?>
+                <div class="columns">
+                    <div class="column col-3">
+                        <p><?php echo $messaggio['data'] ?></p>
+                    </div>
+                    <div class="divider-vert"></div>
+                    <div class="column">
+                        <?php if ($messaggio['id_mittente'] == $utente['id']): ?>
+                            <strong>Tu:</strong>
+                        <?php else: ?>
+                            <strong><?php echo $chat['nome'] ?>:</strong>
+                        <?php endif; ?>
+                        <p><?php echo $messaggio['testo'] ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            <div class="divider"></div>
+    <?php endforeach; ?>
+<?php else: ?>
+    <p>Non hai ancora ricevuto messaggi per questo oggetto</p>
+    <?php endif; ?>
+<?php endif; ?>

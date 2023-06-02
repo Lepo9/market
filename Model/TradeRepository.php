@@ -214,4 +214,58 @@ class TradeRepository{
         return $rows;
     }
 
+    //ottiene tutti i messaggi ricevuti o mandati da un utente per un oggetto
+    public static function getMessaggiUtente(int $id_oggetto, int $id_user): array{
+        //prendo tutti gli utenti che hanno mandato un messaggio per l'oggetto
+        //prendo nome, cognome ed id
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT DISTINCT utente.id as id, nome, cognome FROM utente, messaggio WHERE utente.id = messaggio.id_mittente AND id_oggetto = :id_oggetto AND id_destinatario = :id_user';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'id_oggetto' => $id_oggetto,
+                'id_user' => $id_user
+            ]
+        );
+        $rows = $stmt->fetchAll();
+        $utenti = array();
+        foreach ($rows as $row){
+            $utente = array();
+            $utente['id'] = $row['id'];
+            $utente['nome'] = $row['nome'];
+            $utente['cognome'] = $row['cognome'];
+            $utente['messaggi'] = array();
+            $utenti[] = $utente;
+        }
+        //var_dump($utenti);
+        //per ogni utente prendo i messaggi
+        $data = array();
+        foreach ($utenti as $utente) {
+            //var_dump($utente);
+            //var_dump($id_oggetto);
+            $sql = 'SELECT * FROM messaggio WHERE id_oggetto = :id_oggetto AND (id_mittente = :id_utente OR id_destinatario = :id_utente) ORDER BY data ASC';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                'id_oggetto' => $id_oggetto,
+                'id_utente' => $utente['id'],
+            ]);
+            $rows = $stmt->fetchAll();
+            //stampa messaggi
+            foreach ($rows as $row) {
+                //var_dump($row);
+                $messaggio = array();
+                $messaggio['id'] = $row['id'];
+                $messaggio['id_mittente'] = $row['id_mittente'];
+                $messaggio['id_destinatario'] = $row['id_destinatario'];
+                $messaggio['testo'] = $row['testo'];
+                $messaggio['data'] = $row['data'];
+
+                $utente['messaggi'][] = $messaggio;
+                //var_dump($utente['messaggi']);
+            }
+            //var_dump($utente);
+            $data[$utente['id']] = $utente;
+        }
+        //var_dump($data);
+        return $data;
+    }
 }
