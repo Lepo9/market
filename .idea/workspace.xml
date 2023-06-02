@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/templates/miei_oggetti.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/oggetto.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TradeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TradeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.tpl" afterDir="false" />
-    </list>
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="miei oggetti" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,28 +41,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Documents/ScuolaSuperiore/Triennio/Informatica/php/market/templates",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/ScuolaSuperiore/Triennio/Informatica/php/market/templates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\templates" />
@@ -79,6 +72,7 @@
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\img" />
     </key>
   </component>
@@ -135,7 +129,70 @@
       <option name="project" value="LOCAL" />
       <updated>1685213787511</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit">
+      <created>1685740983735</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685740983735</updated>
+    </task>
+    <task id="LOCAL-00007" summary="creazione dei files php">
+      <created>1685741280046</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685741280046</updated>
+    </task>
+    <task id="LOCAL-00008" summary="oggetto.php">
+      <created>1685742470156</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685742470156</updated>
+    </task>
+    <task id="LOCAL-00009" summary="l'oggetto è comprabile in oggetto.php">
+      <created>1685743292271</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685743292271</updated>
+    </task>
+    <task id="LOCAL-00010" summary="implemantazione della chat per il compratore">
+      <created>1685743767019</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685743767019</updated>
+    </task>
+    <task id="LOCAL-00011" summary="messaggi visualizzati per righe">
+      <created>1685743992544</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1685743992544</updated>
+    </task>
+    <task id="LOCAL-00012" summary="i miei oggetti in vendita">
+      <created>1685744455910</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685744455910</updated>
+    </task>
+    <task id="LOCAL-00013" summary="adattamento a link bottoni">
+      <created>1685744638655</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1685744638655</updated>
+    </task>
+    <task id="LOCAL-00014" summary="miei oggetti">
+      <created>1685745037257</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1685745037257</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +212,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="login" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="creazione dei files php" />
+    <MESSAGE value="oggetto.php" />
+    <MESSAGE value="l'oggetto è comprabile in oggetto.php" />
+    <MESSAGE value="implemantazione della chat per il compratore" />
+    <MESSAGE value="messaggi visualizzati per righe" />
+    <MESSAGE value="i miei oggetti in vendita" />
+    <MESSAGE value="adattamento a link bottoni" />
+    <MESSAGE value="miei oggetti" />
+    <option name="LAST_COMMIT_MESSAGE" value="miei oggetti" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
