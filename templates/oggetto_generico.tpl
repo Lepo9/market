@@ -85,7 +85,10 @@
                 <?php else: ?>
                     <strong><?php echo $offerente['nome'] ?>:</strong>
                 <?php endif; ?>
-                <p><?php echo $messaggio['testo'] ?></p>
+                <?php $righe =   explode("\n", $messaggio['testo'] ); ?>
+                <?php foreach ($righe as $riga): ?>
+                    <p><?php echo $riga ?></p>
+                <?php endforeach; ?>
             </div>
         </div>
     <?php endforeach; ?>
