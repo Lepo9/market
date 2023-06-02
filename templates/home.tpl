@@ -30,10 +30,7 @@
 
         <?php if($titolo != 'I miei oggetti'):?>
             <section class="navbar-center">
-                <form action="." method="get">
-                    <input type="hidden" value="my_obg" name="action">
-                    <button class="btn m-2">I miei oggetti in vendita</button>
-                </form>
+                    <a href="./miei_oggetti.php"><button class="btn m-2">I miei oggetti in vendita</button></a>
             </section>
         <?php endif;?>
 
