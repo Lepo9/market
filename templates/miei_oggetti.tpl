@@ -37,8 +37,7 @@
                 <?php endif; ?>
             </td>
             <td>
-                <form method="get" action=".">
-                    <input type="hidden" name="action" value="obg">
+                <form method="get" action="./mio_oggetto.php">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
                     <button class="btn btn-sm"><i class="icon icon-message"></i></button>
                 </form>

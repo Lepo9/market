@@ -23,7 +23,7 @@
 
         <?php if ($acquirente != false): ?>
             <p>L'oggetto era stato messo in vendita il <?php echo $oggetto['data_offerta'] ?></p>
-            <p>L'oggetto è stato comprato da <?php echo $acquirente['nome'] ?> il <?php echo $oggetto['data_scambio'] ?></p>
+            <p>L'oggetto è stato comprato da <?php echo $acquirente['nome'] ?> <?php echo $acquirente['cognome'] ?> il <?php echo $oggetto['data_scambio'] ?></p>
         <?php else: ?>
             <p>L'oggetto è stato messo in vendita il <?php echo $oggetto['data_offerta'] ?></p>
             <p>Non è ancora stato venduto :(</p>
@@ -63,6 +63,6 @@
             <div class="divider"></div>
     <?php endforeach; ?>
 <?php else: ?>
-    <p>Non hai ancora ricevuto messaggi per questo oggetto</p>
+    <p>Non hai ricevuto messaggi per questo oggetto</p>
     <?php endif; ?>
 <?php endif; ?>
