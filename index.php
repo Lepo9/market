@@ -71,6 +71,7 @@ if (isset($_GET['action'])){
                 'oggetto' => $oggetto,
                 'acquirente' => $acquirente,
                 'utente' => TradeRepository::getUtente($id_user),
+                'chats' => TradeRepository::getMessaggiUtente($_GET['id_oggetto'], $id_user),
             ]);
             exit(0);
             break;

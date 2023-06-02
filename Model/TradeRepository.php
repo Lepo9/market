@@ -234,19 +234,38 @@ class TradeRepository{
             $utente['nome'] = $row['nome'];
             $utente['cognome'] = $row['cognome'];
             $utente['messaggi'] = array();
-            $utenti.push($utente);
+            $utenti[] = $utente;
         }
+        //var_dump($utenti);
         //per ogni utente prendo i messaggi
+        $data = array();
         foreach ($utenti as $utente) {
-            $sql = 'SELECT * FROM messaggio WHERE id_oggetto = :id_oggetto AND (id_mittente = :id_utente OR id_destinatario = :id_utente)';
+            //var_dump($utente);
+            //var_dump($id_oggetto);
+            $sql = 'SELECT * FROM messaggio WHERE id_oggetto = :id_oggetto AND (id_mittente = :id_utente OR id_destinatario = :id_utente) ORDER BY data ASC';
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
                 'id_oggetto' => $id_oggetto,
                 'id_utente' => $utente['id'],
             ]);
             $rows = $stmt->fetchAll();
-            $utente['messaggi'] = $rows;
+            //stampa messaggi
+            foreach ($rows as $row) {
+                //var_dump($row);
+                $messaggio = array();
+                $messaggio['id'] = $row['id'];
+                $messaggio['id_mittente'] = $row['id_mittente'];
+                $messaggio['id_destinatario'] = $row['id_destinatario'];
+                $messaggio['testo'] = $row['testo'];
+                $messaggio['data'] = $row['data'];
+
+                $utente['messaggi'][] = $messaggio;
+                //var_dump($utente['messaggi']);
+            }
+            //var_dump($utente);
+            $data[$utente['id']] = $utente;
         }
-        return $utenti;
+        //var_dump($data);
+        return $data;
     }
 }

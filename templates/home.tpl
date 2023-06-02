@@ -23,7 +23,7 @@
         <?php if($titolo != 'Market'):?>
             <section class="navbar-center">
                 <form action=".">
-                    <button class="btn m-2">Back</button>
+                    <button class="btn m-2">Home</button>
                 </form>
             </section>
         <?php endif;?>
