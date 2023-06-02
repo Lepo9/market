@@ -23,58 +23,15 @@ if (!isset($user['user_id'])){
 //ottengo l'id dell'utente e il suo nome
 $id_user = $user['user_id'];
 
-if(isset($_POST['action'])){
-    if($_POST['action'] == 'compra' && TradeRepository::canBuy($id_user)){
-        TradeRepository::buyOggetto($_POST['id_oggetto'], $id_user, $_POST['id_offerente']);
-    }
-}
 
 //nel caso si voglia fare il logout
 if (isset($_GET['action'])){
     $action = $_GET['action'];
     //switch case
-    switch ($action){
-        case 'logout':
+    if($action == 'logout'){
             Authenticator::logout();
             echo $template->render('login',["login_fallito" => false]);
             exit(0);
-            break;
-        case 'messaggio':
-            if(isset($_GET['msg'])){
-                TradeRepository::newMessaggio($id_user, $_GET['id_destinatario'], $_GET['msg'], $_GET['id_oggetto']);
-            }
-            $id_oggetto = $_GET['id_oggetto'];
-            $id_destinatario = $_GET['id_destinatario'];
-            echo $template->render('messaggio',[
-                'oggetto' => TradeRepository::getOggetto($id_oggetto),
-                'offerente' => TradeRepository::getUtente($id_destinatario),
-                'utente' => TradeRepository::getUtente($id_user),
-                'canBuy' => TradeRepository::canBuy($id_user),
-                'messaggi' => TradeRepository::getMessaggi($id_oggetto)
-            ]);
-            exit(0);
-            break;
-        case 'my_obg':
-            echo $template->render('miei_oggetti',[
-                'oggetti' => TradeRepository::getMieiOggetti($id_user),
-                'utente' => TradeRepository::getUtente($id_user)
-            ]);
-            exit(0);
-            break;
-        case 'obg':
-            $oggetto = TradeRepository::getOggetto($_GET['id_oggetto']);
-            $acquirente = false;
-            if ($oggetto['id_richiedente'] != null){
-                $acquirente = TradeRepository::getUtente($oggetto['id_richiedente']);
-            }
-            echo $template->render('oggetto',[
-                'oggetto' => $oggetto,
-                'acquirente' => $acquirente,
-                'utente' => TradeRepository::getUtente($id_user),
-                'chats' => TradeRepository::getMessaggiUtente($_GET['id_oggetto'], $id_user),
-            ]);
-            exit(0);
-            break;
     }
 }
 

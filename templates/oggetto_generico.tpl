@@ -9,7 +9,12 @@
  */
 ?>
 
-<?php $this->layout('home', ['titolo' => 'Oggetto']);?>
+<?php $this->layout('home', [
+    'titolo' => 'Oggetto',
+    'home' => true,
+    'oggetti' => true,
+    'logout' => true,
+]);?>
 
 
 

@@ -6,7 +6,12 @@
  */
 ?>
 
-<?php $this->layout('home', ['titolo' => 'Market']);?>
+<?php $this->layout('home', [
+        'titolo' => 'Market',
+        'home' => false,
+        'oggetti' => true,
+        'logout' => true,
+]);?>
 
 <h4>Benvenut* <?php echo $utente['nome'] ?></h4>
 <p>Il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>

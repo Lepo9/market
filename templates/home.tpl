@@ -3,6 +3,9 @@
  * Questo commento serve solo a eliminare l'indicazione di errore
  * da parte di PHPStorm per la variabile $studenti
  * @var $titolo
+ * @var $home
+ * @var $oggetti
+ * @var $logout
  */
 ?>
 <html lang="it">
@@ -19,24 +22,24 @@
     <section class="navbar-section"></section>
 
 
-    <?php if($titolo != 'Login'):?>
-        <?php if($titolo != 'Market'):?>
+        <?php if($home):?>
             <section class="navbar-center">
                 <a href="."><button class="btn m-2">Home</button></a>
             </section>
         <?php endif;?>
 
-        <?php if($titolo != 'I miei oggetti'):?>
+        <?php if($oggetti):?>
             <section class="navbar-center">
                     <a href="./miei_oggetti.php"><button class="btn m-2">I miei oggetti in vendita</button></a>
             </section>
         <?php endif;?>
 
-        <section class="navbar-center">
-            <a href="./?action=logout"><button class="btn m-2 btn-error">Logout</button></a>
+        <?php if($logout):?>
+            <section class="navbar-center">
+                <a href="./?action=logout"><button class="btn m-2 btn-error">Logout</button></a>
+            </section>
+        <?php endif;?>
 
-        </section>
-    <?php endif;?>
     <section class="navbar-section"></section>
 </header>
 <div class="container grid-lg">

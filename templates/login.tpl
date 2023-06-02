@@ -5,7 +5,12 @@
  */
 ?>
 
-<?php $this->layout('home', ['titolo' => 'Login']);?>
+<?php $this->layout('home', [
+    'titolo' => 'Login',
+    'home' => false,
+    'oggetti' => false,
+    'logout' => false,
+]);?>
 
 <h1>Login</h1>
 <?php if($login_fallito):?>
