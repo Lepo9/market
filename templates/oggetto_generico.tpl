@@ -42,13 +42,14 @@
 
             <p>In alternativa, puoi metterti in contatto con il venditore per chiedergli informazioni</p>
             <div class="divider"></div>
-            <form action="." method="get">
+            <form action="./action.php" method="post">
                 <div class="form-group">
                     <input type="hidden" name="action" value="messaggio">
+                    <input type="hidden" name="pagina" value="oggetto.php">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id'] ?>">
                     <input type="hidden" name="id_destinatario" value="<?php echo $offerente['id'] ?>">
                     <label class="form-label" for="input-example-1">Manda un mesaggio a <?= $offerente['nome'] ?></label>
-                    <textarea class="form-input" id="input-example-3" placeholder="Scrivi un messaggio" name="msg" rows="5"></textarea>
+                    <textarea class="form-input" id="input-example-3" placeholder="Scrivi un messaggio" name="testo" rows="5"></textarea>
                     <button class="btn">Invia!</button>
                 </div>
             </form>

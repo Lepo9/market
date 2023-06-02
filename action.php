@@ -20,6 +20,7 @@ if (!isset($user['user_id'])) {
     header('Location: index.php');
     exit(0);
 }
+$id_user = $user['user_id'];
 
 if(!isset($_POST['action'])){
     header('Location: index.php');
@@ -29,11 +30,18 @@ if(!isset($_POST['action'])){
 $action = $_POST['action'];
 
 if($action == 'compra'){
-    $id_user = $user['user_id'];
+
     if(TradeRepository::canBuy($id_user)){
         TradeRepository::buyOggetto($_POST['id_oggetto'], $id_user);
     }
     header('Location: index.php');
+    exit(0);
+}
+
+if($action == 'messaggio'){
+
+    TradeRepository::newMessaggio($id_user, $_POST['id_destinatario'], $_POST['testo'], $_POST['id_oggetto']);
+    header('Location: '.$_POST['pagina'].'?id_oggetto='.$_POST['id_oggetto']);
     exit(0);
 }
 
