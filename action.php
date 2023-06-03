@@ -39,7 +39,6 @@ if($action == 'compra'){
 }
 
 if($action == 'messaggio'){
-
     TradeRepository::newMessaggio($id_user, $_POST['id_destinatario'], $_POST['testo'], $_POST['id_oggetto']);
     header('Location: '.$_POST['pagina'].'?id_oggetto='.$_POST['id_oggetto']);
     exit(0);

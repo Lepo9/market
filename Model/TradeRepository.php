@@ -96,6 +96,18 @@ class TradeRepository{
         $pdo = Connection::getInstance();
         try {
             $pdo->beginTransaction();
+            //prima vedo se l'oggetto ha un'immagine
+            $sql = 'SELECT immagine FROM oggetto WHERE id=:id';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                    'id' => $id,
+                ]
+            );
+            $row = $stmt->fetch();
+            //se ha un'immagine la elimino
+            if ($row['immagine'] != null) {
+                unlink($row['immagine']);
+            }
             $sql = 'DELETE FROM oggetto WHERE id=:id';
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
