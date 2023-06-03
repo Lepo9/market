@@ -46,7 +46,11 @@
 
 <?php if ($oggetto['descrizione'] != null): ?>
     <div class="divider m-4"></div>
-    <p><?php echo $oggetto['descrizione']?></p>
+    <?php $righe =   explode("\n", $oggetto['descrizione'] ); ?>
+    <h4>Descrizione</h4>
+    <?php foreach ($righe as $riga): ?>
+        <p><?php echo $riga ?></p>
+    <?php endforeach; ?>
 <?php endif; ?>
 
 <div class="divider"></div>

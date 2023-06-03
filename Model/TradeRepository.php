@@ -47,7 +47,7 @@ class TradeRepository{
             $percorsoDestinazione = $destination_path . $nuovoNome;
 
             // Dimensioni desiderate per l'immagine ridimensionata
-            $larghezzaDesiderata = 350;
+            $larghezzaDesiderata = 600;
             // Ottieni le dimensioni dell'immagine originale
             list($larghezzaOriginale, $altezzaOriginale) = getimagesize($nomeTemporaneo);
 
