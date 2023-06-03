@@ -67,6 +67,8 @@
     </div>
 </div>
 
+<div class="divider mt-4"></div>
+
 
 <?php if ($oggetto['descrizione'] != null): ?>
     <?php $righe =   explode("\n", $oggetto['descrizione'] ); ?>

@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="modifica completata correttamente">
-      <change afterPath="$PROJECT_DIR$/comprati.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oggetto_scambiato.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/comprati.tpl" afterDir="false" />
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="visualizzata la lista di quelli scambiati">
+      <change afterPath="$PROJECT_DIR$/templates/oggetto_comprato.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TradeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TradeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oggetti_scambiati.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oggetto_scambiato.php" beforeDir="false" afterPath="$PROJECT_DIR$/oggetto_scambiato.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,35 +52,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/ScuolaSuperiore/Triennio/Informatica/php/market&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Documents/ScuolaSuperiore/Triennio/Informatica/php/market/templates",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.sync",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;mariadb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "mariadb"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\templates" />
+      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\conf" />
       <recent name="C:\Users\77097428\PhpstormProjects\market\templates" />
       <recent name="C:\Users\77097428\PhpstormProjects\market\conf" />
@@ -123,7 +122,7 @@
       <workItem from="1685802949063" duration="247000" />
       <workItem from="1685803218778" duration="621000" />
       <workItem from="1685803942509" duration="82000" />
-      <workItem from="1685804043373" duration="13266000" />
+      <workItem from="1685804043373" duration="13974000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -314,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685818619175</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="visualizzata la lista di quelli scambiati">
+      <created>1685821053718</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1685821053718</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +403,8 @@
     <MESSAGE value="tasto elimina dinamico" />
     <MESSAGE value="prima parte della modifica dove i pezzi di codice vengono re_inseriti" />
     <MESSAGE value="modifica completata correttamente" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifica completata correttamente" />
+    <MESSAGE value="visualizzata la lista di quelli scambiati" />
+    <option name="LAST_COMMIT_MESSAGE" value="visualizzata la lista di quelli scambiati" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

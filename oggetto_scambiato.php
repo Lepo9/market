@@ -17,6 +17,7 @@ if (!isset($user['user_id'])){
     header('Location: index.php');
     exit(0);
 }
+$id_user = $user['user_id'];
 
 
 //recupero dalla get id_oggetto
@@ -30,18 +31,17 @@ if (!isset($id_oggetto)) {
 //recupero l'oggetto dal db
 $oggetto = TradeRepository::getOggetto($id_oggetto);
 //se non esiste, reindirizzo alla home
-if (!$oggetto || $oggetto['data_scambio'] != null){
+if (!$oggetto || $oggetto['id_richiedente'] != $id_user){
     header('Location: index.php');
     exit;
 }
 
 
 
-echo $template->render('oggetto_generico',[
+echo $template->render('oggetto_comprato',[
     'oggetto' => $oggetto,
     'offerente' => TradeRepository::getUtente($oggetto['id_offerente']),
     'utente' => TradeRepository::getUtente($user['user_id']),
-    'canBuy' => TradeRepository::canBuy($user['user_id']),
     'messaggi' => TradeRepository::getMessaggi($id_oggetto)
 ]);
 
