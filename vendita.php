@@ -18,22 +18,44 @@ if (!isset($user['user_id'])) {
 }
 $id_user = $user['user_id'];
 
-if (isset($_POST['nome'])) {
+$errore = "";
+$messaggio = "";
+$nome = "";
+$descrizione = "";
+
+if (isset($_POST['categoria'])) {
+
     $nome = $_POST['nome'];
     $descrizione = null;
     if (isset($_POST['descrizione']))
         $descrizione = $_POST['descrizione'];
     $categoria = $_POST['categoria'];
+    if($categoria == 0){
+        $errore = "Seleziona una categoria";
+        $categorie = TradeRepository::getCategorie();
+
+        echo $template->render('aggiungi', [
+            'messaggio' => $messaggio,
+            'errore' => $errore,
+            'nome' => $nome,
+            'descrizione' => $descrizione,
+            'utente' => TradeRepository::getUtente($id_user),
+            'categorie' => $categorie
+        ]);
+        exit(0);
+    }
     $immagine = null;
     if (isset($_FILES['immagine'])){
         $immagine = $_FILES['immagine'];
         $immagine = TradeRepository::uploadImage($immagine);
         //var_dump($immagine);
     }
-    $errore = TradeRepository::newOggetto($id_user, $nome, $descrizione, $immagine, $categoria);
-    if ($errore == null) {
-        header('Location: index.php');
-        exit(0);
+    $esito = TradeRepository::newOggetto($id_user, $nome, $descrizione, $immagine, $categoria);
+
+    if ($esito) {
+        $messaggio = "Oggetto caricato con successo! Vai in <a href=\"./miei_oggetti.php\">Oggetti in vendita</a> per vederlo";
+    } else {
+        $errore = "Errore durante il caricamento dell'oggetto";
     }
 
 }
@@ -42,6 +64,10 @@ if (isset($_POST['nome'])) {
 $categorie = TradeRepository::getCategorie();
 
 echo $template->render('aggiungi', [
+    'messaggio' => $messaggio,
+    'errore' => "",
+    'nome' => "",
+    'descrizione' => "",
     'utente' => TradeRepository::getUtente($id_user),
     'categorie' => $categorie
 ]);
