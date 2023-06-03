@@ -248,7 +248,37 @@ class TradeRepository{
         return $rows;
     }
 
-    //l'oggetto è ancora vendibile?
+    public static function editOggetto(int $id,  $nome,  $descrizione,  $immagine,  $id_categoria): bool{
+        $pdo = Connection::getInstance();
+        if (substr($immagine, 0,1) != '.') {
+            //elimino l'immagine precedente
+            $sql = 'SELECT immagine FROM oggetto WHERE id = :id';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                    'id' => $id,
+                ]
+            );
+            $row = $stmt->fetch();
+            $im = $row['immagine'];
+            unlink($im);
+            $immagine = "./img/" . $immagine;
+        }
+
+        $sql = 'UPDATE oggetto SET nome = :nome, descrizione = :descrizione, immagine = :immagine, id_categoria = :id_categoria WHERE id = :id';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'id' => $id,
+                'nome' => $nome,
+                'descrizione' => $descrizione,
+                'immagine' => $immagine,
+                'id_categoria' => $id_categoria
+            ]
+        );
+        if ($stmt->rowCount() == 1)
+            return true;
+        return false;
+    }
+
     public static function isVendibile(int $id_oggetto): bool{
         $pdo = Connection::getInstance();
         $sql = 'SELECT id_richiedente FROM oggetto WHERE id = :id_oggetto';

@@ -54,7 +54,6 @@
     <label class="form-label" for="input-example-4">Categoria</label>
     <?php if(isset($id_categoria)): ?>
         <select id="input-example-4" class="form-select" name="categoria">
-            <option value="0">Seleziona una categoria</option>
             <?php foreach ($categorie as $categoria): ?>
                 <option value="<?php echo $categoria['id'] ?>" <?php if($categoria['id'] == $id_categoria) echo "selected";?>><?php echo $categoria['descrizione'] ?></option>
             <?php endforeach; ?>

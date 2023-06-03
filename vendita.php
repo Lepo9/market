@@ -23,6 +23,8 @@ $messaggio = "";
 $nome = "";
 $descrizione = "";
 
+
+
 if(isset($_POST['id_oggetto'])){
     $oggetto = TradeRepository::getRawOggetto($_POST['id_oggetto']);
     $nome = $oggetto['nome'];
@@ -41,6 +43,26 @@ if(isset($_POST['id_oggetto'])){
         'utente' => TradeRepository::getUtente($id_user),
         'categorie' => $categorie
     ]);
+    exit(0);
+}
+
+
+
+if(isset($_POST['id_oggetto_vecchio'])){
+    $oggetto = TradeRepository::getRawOggetto($_POST['id_oggetto_vecchio']);
+    $nome = $_POST['nome'];
+    $descrizione = $oggetto['descrizione'];
+    if (isset($_POST['descrizione']))
+        $descrizione = $_POST['descrizione'];
+    $categoria = $_POST['categoria'];
+    $immagine = $oggetto['immagine'];
+    if ($_FILES['immagine']['name'] != ""){
+        $immagine = $_FILES['immagine'];
+        var_dump($immagine);
+        $immagine = TradeRepository::uploadImage($immagine);
+    }
+    TradeRepository::editOggetto($_POST['id_oggetto_vecchio'], $nome, $descrizione, $immagine, $categoria);
+    header('Location: mio_oggetto.php?id_oggetto='.$_POST['id_oggetto_vecchio']);
     exit(0);
 }
 
