@@ -18,6 +18,27 @@ if (!isset($user['user_id'])) {
 }
 $id_user = $user['user_id'];
 
+if (isset($_POST['nome'])) {
+    $nome = $_POST['nome'];
+    $descrizione = null;
+    if (isset($_POST['descrizione']))
+        $descrizione = $_POST['descrizione'];
+    $categoria = $_POST['categoria'];
+    $immagine = null;
+    if (isset($_FILES['immagine'])){
+        $immagine = $_FILES['immagine'];
+        $immagine = TradeRepository::uploadImage($immagine);
+        //var_dump($immagine);
+    }
+    $errore = TradeRepository::newOggetto($id_user, $nome, $descrizione, $immagine, $categoria);
+    if ($errore == null) {
+        header('Location: index.php');
+        exit(0);
+    }
+
+}
+
+
 $categorie = TradeRepository::getCategorie();
 
 echo $template->render('aggiungi', [

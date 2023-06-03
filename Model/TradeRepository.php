@@ -1,33 +1,85 @@
 <?php
 
 namespace Model;
+
+require 'vendor/autoload.php';
 use http\Exception\BadMessageException;
 use Util\Connection;
 
+
+
 class TradeRepository{
 
-    public static function newOggetto($id_utente): int{
+    public static function newOggetto($id_utente, $nome, $descrizione, $immagine, $id_categoria): bool{
         $pdo = Connection::getInstance();
         try {
-            //begin transaction
+            if ($immagine != null)
+                $immagine = "./img/" . $immagine;
             $pdo->beginTransaction();
-            $sql = 'INSERT INTO oggetto (id_offerente, nome) VALUES (:id_utente, :nome)';
+            $sql = 'INSERT INTO oggetto (nome, descrizione, immagine, id_categoria, id_offerente) VALUES (:nome, :descrizione, :immagine, :id_categoria, :id_utente)';
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
-                    'id_utente' => $id_utente,
-                    'nome'  => 'Nuovo oggetto'
+                    'nome' => $nome,
+                    'descrizione' => $descrizione,
+                    'immagine' => $immagine,
+                    'id_categoria' => $id_categoria,
+                    'id_utente' => $id_utente
                 ]
             );
-            //Ritorna l'id dell'oggetto appena creato
-            $id_oggetto = $pdo->lastInsertId();
-        } catch (PDOException $e) {
-            //rollback if something goes wrong
+            $pdo->commit();
+            return true;
+        } catch (BadMessageException $e) {
             $pdo->rollBack();
-            echo $e->getMessage();
+            return false;
         }
-        //commit if everything is ok
-        $pdo->commit();
-        return $id_oggetto;
+    }
+
+    public static function uploadImage($image): string | null{
+       $destination_path = './img/';
+        if ($image['error'] === UPLOAD_ERR_OK){
+            $nomeFile = $image['name']; // Ottieni il nome originale del file
+            $nomeTemporaneo = $image['tmp_name']; // Ottieni il percorso temporaneo del file
+            //var_dump(pathinfo($nomeFile, PATHINFO_EXTENSION));
+            // Rinomina il file utilizzando l'estensione originale
+            $nuovoNome = time() . '.' . pathinfo($nomeFile, PATHINFO_EXTENSION);
+
+            // Specifica il percorso in cui salvare l'immagine ridimensionata
+            $percorsoDestinazione = $destination_path . $nuovoNome;
+
+            // Dimensioni desiderate per l'immagine ridimensionata
+            $altezzaDesiderata = 600;
+            // Ottieni le dimensioni dell'immagine originale
+            list($larghezzaOriginale, $altezzaOriginale) = getimagesize($nomeTemporaneo);
+
+            // Calcola la larghezza proporzionale in base all'altezza desiderata
+            $larghezzaDesiderata = round(($larghezzaOriginale / $altezzaOriginale) * $altezzaDesiderata);
+
+
+            // Carica l'immagine originale utilizzando la libreria GD
+            if(pathinfo($nomeFile, PATHINFO_EXTENSION) == 'jpeg' || pathinfo($nomeFile, PATHINFO_EXTENSION) == 'jpg')
+            $immagine = imagecreatefromjpeg($nomeTemporaneo);
+            else if(pathinfo($nomeFile, PATHINFO_EXTENSION) == 'png')
+                $immagine = imagecreatefrompng($nomeTemporaneo);
+            else
+                return null;
+
+            // Crea una nuova immagine ridimensionata
+            $immagineRidimensionata = imagescale($immagine, $larghezzaDesiderata, $altezzaDesiderata);
+
+            // Salva l'immagine ridimensionata
+            if(pathinfo($nomeFile, PATHINFO_EXTENSION) == 'jpeg' || pathinfo($nomeFile, PATHINFO_EXTENSION) == 'jpg')
+                imagejpeg($immagineRidimensionata, $percorsoDestinazione);
+            else if(pathinfo($nomeFile, PATHINFO_EXTENSION) == 'png')
+                imagepng($immagineRidimensionata, $percorsoDestinazione);
+            else
+                return null;
+            // Libera la memoria
+            imagedestroy($immagine);
+            imagedestroy($immagineRidimensionata);
+            return $nuovoNome;
+        }
+        else
+            return null;
     }
 
     //ottiene tutte le categorie
