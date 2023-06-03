@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="prima parte della modifica dove i pezzi di codice vengono re_inseriti">
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="modifica completata correttamente">
+      <change afterPath="$PROJECT_DIR$/comprati.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oggetto_scambiato.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/comprati.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/TradeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TradeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/aggiungi.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aggiungi.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendita.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendita.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,11 +80,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\templates" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\conf" />
       <recent name="C:\Users\77097428\PhpstormProjects\market\templates" />
       <recent name="C:\Users\77097428\PhpstormProjects\market\conf" />
-      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
@@ -122,7 +123,7 @@
       <workItem from="1685802949063" duration="247000" />
       <workItem from="1685803218778" duration="621000" />
       <workItem from="1685803942509" duration="82000" />
-      <workItem from="1685804043373" duration="12171000" />
+      <workItem from="1685804043373" duration="13266000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -306,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685817382714</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="modifica completata correttamente">
+      <created>1685818619175</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1685818619175</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +396,8 @@
     <MESSAGE value="viene anche eliminata l'immagine dalla memoria" />
     <MESSAGE value="tasto elimina dinamico" />
     <MESSAGE value="prima parte della modifica dove i pezzi di codice vengono re_inseriti" />
-    <option name="LAST_COMMIT_MESSAGE" value="prima parte della modifica dove i pezzi di codice vengono re_inseriti" />
+    <MESSAGE value="modifica completata correttamente" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica completata correttamente" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
