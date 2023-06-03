@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="modifica del meccanismo navbar">
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="aggiunta tasto per vendere un oggetto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo_list.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/oggetto.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oggetto.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +100,7 @@
       <workItem from="1685745167931" duration="420000" />
       <workItem from="1685745605954" duration="448000" />
       <workItem from="1685746273924" duration="22000" />
+      <workItem from="1685799007057" duration="642000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -214,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685745781973</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="aggiunta tasto per vendere un oggetto">
+      <created>1685799295263</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685799295263</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +250,8 @@
     <MESSAGE value="miei oggetti" />
     <MESSAGE value="commit" />
     <MESSAGE value="modifica del meccanismo navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifica del meccanismo navbar" />
+    <MESSAGE value="aggiunta tasto per vendere un oggetto" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta tasto per vendere un oggetto" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
