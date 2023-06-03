@@ -82,6 +82,9 @@
                     </div>
                 </div>
             <?php endforeach; ?>
+            <?php if ($oggetto['data_scambio'] != null): ?>
+                <p>Non puoi più rispondere a questa chat, l'oggetto è stato venduto</p>
+            <?php else: ?>
             <form action="./action.php" method="post">
                 <div class="form-group">
                     <input type="hidden" name="action" value="messaggio">
@@ -93,6 +96,7 @@
                     <button class="btn">Invia!</button>
                 </div>
             </form>
+            <?php endif; ?>
             <div class="divider"></div>
     <?php endforeach; ?>
 <?php else: ?>
