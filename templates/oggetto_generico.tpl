@@ -14,7 +14,8 @@
     'home' => true,
     'oggetti' => true,
     'logout' => true,
-    'vendita' => true
+    'vendita' => true,
+    'comprati' => true
 ]);?>
 
 

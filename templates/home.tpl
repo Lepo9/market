@@ -7,6 +7,7 @@
  * @var $oggetti
  * @var $logout
  * @var $vendita
+ * @var $comprati
  */
 ?>
 <html lang="it">
@@ -39,6 +40,12 @@
         <section class="navbar-center">
             <a href="./vendita.php"><button class="btn m-2">Vendi un oggetto</button></a>
         </section>
+        <?php endif;?>
+
+        <?php if($comprati):?>
+            <section class="navbar-center">
+                <a href="./comprati.php"><button class="btn m-2">Oggetti comprati</button></a>
+            </section>
         <?php endif;?>
 
         <?php if($logout):?>

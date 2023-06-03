@@ -11,7 +11,8 @@
     'home' => true,
     'oggetti' => false,
     'logout' => true,
-    'vendita' => true
+    'vendita' => true,
+    'comprati' => true,
 ]);?>
 
 <h4>Benvenut* <?php echo $utente['nome'] ?></h4>
