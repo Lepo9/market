@@ -30,6 +30,17 @@ class TradeRepository{
         return $id_oggetto;
     }
 
+    //ottiene tutte le categorie
+    public static function getCategorie(): array{
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT * FROM categoria order by descrizione asc ';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
+
+
     public static function getOggetto(int $id): array{
         $pdo = Connection::getInstance();
         $sql = 'SELECT oggetto.id as id, nome, oggetto.descrizione as descrizione, id_offerente, id_richiedente, immagine,  data_offerta, data_scambio, categoria.descrizione as categoria FROM oggetto, categoria WHERE categoria.id = id_categoria and oggetto.id=:id';
