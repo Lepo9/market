@@ -62,10 +62,26 @@
                         <?php else: ?>
                             <strong><?php echo $chat['nome'] ?>:</strong>
                         <?php endif; ?>
-                        <p><?php echo $messaggio['testo'] ?></p>
+
+                        <?php $righe =   explode("\n", $messaggio['testo'] ); ?>
+                        <?php foreach ($righe as $riga): ?>
+                            <p><?php echo $riga ?></p>
+                        <?php endforeach; ?>
+
                     </div>
                 </div>
             <?php endforeach; ?>
+            <form action="./action.php" method="post">
+                <div class="form-group">
+                    <input type="hidden" name="action" value="messaggio">
+                    <input type="hidden" name="pagina" value="mio_oggetto.php">
+                    <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id'] ?>">
+                    <input type="hidden" name="id_destinatario" value="<?php echo $chat['id'] ?>">
+                    <label class="form-label" for="input-example-1">Rispondi a <?= $chat['nome'] ?></label>
+                    <textarea class="form-input" id="input-example-3" placeholder="Scrivi un messaggio" name="testo" rows="2"></textarea>
+                    <button class="btn">Invia!</button>
+                </div>
+            </form>
             <div class="divider"></div>
     <?php endforeach; ?>
 <?php else: ?>
