@@ -6,6 +6,7 @@
  * @var $home
  * @var $oggetti
  * @var $logout
+ * @var $vendita
  */
 ?>
 <html lang="it">
@@ -34,11 +35,19 @@
             </section>
         <?php endif;?>
 
+        <?php if($vendita):?>
+        <section class="navbar-center">
+            <a href="./vendita.php"><button class="btn m-2">Vendi un oggetto</button></a>
+        </section>
+        <?php endif;?>
+
         <?php if($logout):?>
             <section class="navbar-center">
                 <a href="./?action=logout"><button class="btn m-2 btn-error">Logout</button></a>
             </section>
         <?php endif;?>
+
+
 
     <section class="navbar-section"></section>
 </header>

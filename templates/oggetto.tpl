@@ -13,6 +13,7 @@
     'home' => true,
     'oggetti' => true,
     'logout' => true,
+    'vendita' => true
 ]);?>
 
 <?php if($utente['id'] != $oggetto['id_offerente']): ?>

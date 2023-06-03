@@ -10,6 +10,7 @@
     'home' => false,
     'oggetti' => false,
     'logout' => false,
+    'vendita' => false
 ]);?>
 
 <h1>Login</h1>
