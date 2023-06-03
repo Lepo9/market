@@ -23,9 +23,13 @@
 
 
         <h1><?php echo $oggetto['nome'] ?></h1>
+        <div class="columns">
             <?php if ($oggetto['immagine'] != null): ?>
-                <img src="<?php echo $oggetto['immagine'] ?>" alt="immagine dell'oggetto">
+            <div class="column col-6">
+                <img src="<?php echo $oggetto['immagine'] ?>" alt="immagine dell'oggetto" class="img-responsive">
+            </div>
             <?php endif; ?>
+        <div class="column col-6">
         <h3>Categoria: <?php echo $oggetto['categoria']?></h3>
 
         <?php if ($acquirente != false): ?>
@@ -35,11 +39,13 @@
             <p>L'oggetto è stato messo in vendita il <?php echo $oggetto['data_offerta'] ?></p>
             <p>Non è ancora stato venduto :(</p>
         <?php endif; ?>
-
+        </div>
+        </div>
 
 
 
 <?php if ($oggetto['descrizione'] != null): ?>
+    <div class="divider m-4"></div>
     <p><?php echo $oggetto['descrizione']?></p>
 <?php endif; ?>
 

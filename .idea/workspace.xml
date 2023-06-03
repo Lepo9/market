@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="il form funziona correttamente. l'immagine viene caricata e salvata">
-      <change beforePath="$PROJECT_DIR$/Model/TradeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TradeRepository.php" afterDir="false" />
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="dimensioni dell'immagini corrette">
+      <change beforePath="$PROJECT_DIR$/templates/oggetto.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oggetto.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/oggetto_generico.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oggetto_generico.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +120,7 @@
       <workItem from="1685802949063" duration="247000" />
       <workItem from="1685803218778" duration="621000" />
       <workItem from="1685803942509" duration="82000" />
-      <workItem from="1685804043373" duration="7685000" />
+      <workItem from="1685804043373" duration="7983000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -254,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685813859351</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="dimensioni dell'immagini corrette">
+      <created>1685814101327</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1685814101327</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +336,8 @@
     <MESSAGE value="aggiunta tasto per vendere un oggetto" />
     <MESSAGE value="creazione dell'interfaccia di creazione dell'oggetto" />
     <MESSAGE value="il form funziona correttamente. l'immagine viene caricata e salvata" />
-    <option name="LAST_COMMIT_MESSAGE" value="il form funziona correttamente. l'immagine viene caricata e salvata" />
+    <MESSAGE value="dimensioni dell'immagini corrette" />
+    <option name="LAST_COMMIT_MESSAGE" value="dimensioni dell'immagini corrette" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

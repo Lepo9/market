@@ -24,9 +24,9 @@
     <div class="column">
         <h1><?php echo $oggetto['nome'] ?></h1>
             <?php if ($oggetto['immagine'] != null): ?>
-                <img src="<?php echo $oggetto['immagine'] ?>" alt="immagine dell'oggetto">
+                <img src="<?php echo $oggetto['immagine'] ?>" alt="immagine dell'oggetto" class="img-responsive">
             <?php endif; ?>
-        <h3>Categoria: <?php echo $oggetto['categoria']?></h3>
+        <h3 class="mt-2">Categoria: <?php echo $oggetto['categoria']?></h3>
         <p>L'oggetto è in vendita da <?php echo $oggetto['data_offerta'] ?></p>
     </div>
     <div class="divider-vert"></div>
