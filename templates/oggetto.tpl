@@ -8,7 +8,14 @@
  */
 ?>
 
-<?php $this->layout('home', ['titolo' => 'Oggetto']);?>
+<?php $this->layout('home', [
+    'titolo' => 'Oggetto',
+    'home' => true,
+    'oggetti' => true,
+    'logout' => true,
+    'vendita' => true,
+    'comprati' => true
+]);?>
 
 <?php if($utente['id'] != $oggetto['id_offerente']): ?>
     <h1>AH! Furbetto! Non sei autorizzato a vedere questa pagina! IHIHIH!</h1>
@@ -23,7 +30,7 @@
 
         <?php if ($acquirente != false): ?>
             <p>L'oggetto era stato messo in vendita il <?php echo $oggetto['data_offerta'] ?></p>
-            <p>L'oggetto è stato comprato da <?php echo $acquirente['nome'] ?> il <?php echo $oggetto['data_scambio'] ?></p>
+            <p>L'oggetto è stato comprato da <?php echo $acquirente['nome'] ?> <?php echo $acquirente['cognome'] ?> il <?php echo $oggetto['data_scambio'] ?></p>
         <?php else: ?>
             <p>L'oggetto è stato messo in vendita il <?php echo $oggetto['data_offerta'] ?></p>
             <p>Non è ancora stato venduto :(</p>
@@ -56,13 +63,29 @@
                         <?php else: ?>
                             <strong><?php echo $chat['nome'] ?>:</strong>
                         <?php endif; ?>
-                        <p><?php echo $messaggio['testo'] ?></p>
+
+                        <?php $righe =   explode("\n", $messaggio['testo'] ); ?>
+                        <?php foreach ($righe as $riga): ?>
+                            <p><?php echo $riga ?></p>
+                        <?php endforeach; ?>
+
                     </div>
                 </div>
             <?php endforeach; ?>
+            <form action="./action.php" method="post">
+                <div class="form-group">
+                    <input type="hidden" name="action" value="messaggio">
+                    <input type="hidden" name="pagina" value="mio_oggetto.php">
+                    <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id'] ?>">
+                    <input type="hidden" name="id_destinatario" value="<?php echo $chat['id'] ?>">
+                    <label class="form-label" for="input-example-1">Rispondi a <?= $chat['nome'] ?></label>
+                    <textarea class="form-input" id="input-example-3" placeholder="Scrivi un messaggio" name="testo" rows="2"></textarea>
+                    <button class="btn">Invia!</button>
+                </div>
+            </form>
             <div class="divider"></div>
     <?php endforeach; ?>
 <?php else: ?>
-    <p>Non hai ancora ricevuto messaggi per questo oggetto</p>
+    <p>Non hai ricevuto messaggi per questo oggetto</p>
     <?php endif; ?>
 <?php endif; ?>

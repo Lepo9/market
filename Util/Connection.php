@@ -3,6 +3,7 @@
 namespace Util;
 use PDO;
 
+
 /**
  * Classe per gestire la connessione al database
  */

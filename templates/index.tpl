@@ -6,7 +6,14 @@
  */
 ?>
 
-<?php $this->layout('home', ['titolo' => 'Market']);?>
+<?php $this->layout('home', [
+        'titolo' => 'Market',
+        'home' => false,
+        'oggetti' => true,
+        'logout' => true,
+        'vendita' => true,
+        'comprati' => true
+]);?>
 
 <h4>Benvenut* <?php echo $utente['nome'] ?></h4>
 <p>Il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
@@ -31,10 +38,8 @@
             <td><?php echo $oggetto['data_offerta'] ?></td>
             <td><?php echo $oggetto['nomeu']." ".$oggetto["cognomeu"] ?></td>
             <td>
-                <form method="get" action=".">
-                    <input type="hidden" name="action" value="messaggio">
+                <form method="get" action="./oggetto.php">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
-                    <input type="hidden" name="id_destinatario" value="<?php echo $oggetto['id_utente'] ?>">
                     <button class="btn btn-sm"><i class="icon icon-message"></i></button>
                 </form>
             </td>

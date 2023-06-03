@@ -6,7 +6,14 @@
  */
 ?>
 
-<?php $this->layout('home', ['titolo' => 'I miei oggetti']);?>
+<?php $this->layout('home', [
+    'titolo' => 'I miei oggetti',
+    'home' => true,
+    'oggetti' => false,
+    'logout' => true,
+    'vendita' => true,
+    'comprati' => true,
+]);?>
 
 <h4>Benvenut* <?php echo $utente['nome'] ?></h4>
 <p>Il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
@@ -37,8 +44,7 @@
                 <?php endif; ?>
             </td>
             <td>
-                <form method="get" action=".">
-                    <input type="hidden" name="action" value="obg">
+                <form method="get" action="./mio_oggetto.php">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
                     <button class="btn btn-sm"><i class="icon icon-message"></i></button>
                 </form>

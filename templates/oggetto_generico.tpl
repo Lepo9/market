@@ -9,7 +9,14 @@
  */
 ?>
 
-<?php $this->layout('home', ['titolo' => 'Oggetto']);?>
+<?php $this->layout('home', [
+    'titolo' => 'Oggetto',
+    'home' => true,
+    'oggetti' => true,
+    'logout' => true,
+    'vendita' => true,
+    'comprati' => true
+]);?>
 
 
 
@@ -26,7 +33,7 @@
     <div class="column">
         <p><?= $utente['nome'] ?>, il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
         <?php if ($canBuy): ?>
-            <form class="form-horizontal" action="." method="post">
+            <form class="form-horizontal" action="./action.php" method="post">
                 <div class="form-group">
                     <div class="col-9 col-sm-12">
                         <label class="form-label" for="input-example-1">Hai abbastanza gettoni per comprare l'oggetto. Ricordati che ti costerà un gettone!</label>
@@ -34,7 +41,6 @@
                     <div class="col-3 col-sm-12">
                         <input type="hidden" name="action" value="compra">
                         <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id'] ?>">
-                        <input type="hidden" name="id_offerente" value="<?php echo $offerente['id'] ?>">
                         <input class="button btn-lg" type="submit" value="Compra!">                    </div>
                 </div>
             </form>
@@ -43,13 +49,14 @@
 
             <p>In alternativa, puoi metterti in contatto con il venditore per chiedergli informazioni</p>
             <div class="divider"></div>
-            <form action="." method="get">
+            <form action="./action.php" method="post">
                 <div class="form-group">
                     <input type="hidden" name="action" value="messaggio">
+                    <input type="hidden" name="pagina" value="oggetto.php">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id'] ?>">
                     <input type="hidden" name="id_destinatario" value="<?php echo $offerente['id'] ?>">
                     <label class="form-label" for="input-example-1">Manda un mesaggio a <?= $offerente['nome'] ?></label>
-                    <textarea class="form-input" id="input-example-3" placeholder="Scrivi un messaggio" name="msg" rows="5"></textarea>
+                    <textarea class="form-input" id="input-example-3" placeholder="Scrivi un messaggio" name="testo" rows="5"></textarea>
                     <button class="btn">Invia!</button>
                 </div>
             </form>
@@ -85,7 +92,10 @@
                 <?php else: ?>
                     <strong><?php echo $offerente['nome'] ?>:</strong>
                 <?php endif; ?>
-                <p><?php echo $messaggio['testo'] ?></p>
+                <?php $righe =   explode("\n", $messaggio['testo'] ); ?>
+                <?php foreach ($righe as $riga): ?>
+                    <p><?php echo $riga ?></p>
+                <?php endforeach; ?>
             </div>
         </div>
     <?php endforeach; ?>

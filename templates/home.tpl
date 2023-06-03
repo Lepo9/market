@@ -3,6 +3,11 @@
  * Questo commento serve solo a eliminare l'indicazione di errore
  * da parte di PHPStorm per la variabile $studenti
  * @var $titolo
+ * @var $home
+ * @var $oggetti
+ * @var $logout
+ * @var $vendita
+ * @var $comprati
  */
 ?>
 <html lang="it">
@@ -19,31 +24,38 @@
     <section class="navbar-section"></section>
 
 
-    <?php if($titolo != 'Login'):?>
-        <?php if($titolo != 'Market'):?>
+        <?php if($home):?>
             <section class="navbar-center">
-                <form action=".">
-                    <button class="btn m-2">Home</button>
-                </form>
+                <a href="."><button class="btn m-2">Home</button></a>
             </section>
         <?php endif;?>
 
-        <?php if($titolo != 'I miei oggetti'):?>
+        <?php if($oggetti):?>
             <section class="navbar-center">
-                <form action="." method="get">
-                    <input type="hidden" value="my_obg" name="action">
-                    <button class="btn m-2">I miei oggetti in vendita</button>
-                </form>
+                    <a href="./miei_oggetti.php"><button class="btn m-2">I miei oggetti in vendita</button></a>
             </section>
         <?php endif;?>
 
+        <?php if($vendita):?>
         <section class="navbar-center">
-            <form action="." method="get">
-                <input type="hidden" value="logout" name="action">
-                <button class="btn m-2 btn-error">Logout</button>
-            </form>
+            <a href="./vendita.php"><button class="btn m-2">Vendi un oggetto</button></a>
         </section>
-    <?php endif;?>
+        <?php endif;?>
+
+        <?php if($comprati):?>
+            <section class="navbar-center">
+                <a href="./comprati.php"><button class="btn m-2">Oggetti comprati</button></a>
+            </section>
+        <?php endif;?>
+
+        <?php if($logout):?>
+            <section class="navbar-center">
+                <a href="./?action=logout"><button class="btn m-2 btn-error">Logout</button></a>
+            </section>
+        <?php endif;?>
+
+
+
     <section class="navbar-section"></section>
 </header>
 <div class="container grid-lg">
