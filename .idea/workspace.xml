@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="creazione dell'interfaccia di creazione dell'oggetto">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="il form funziona correttamente. l'immagine viene caricata e salvata">
       <change beforePath="$PROJECT_DIR$/Model/TradeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TradeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendita.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendita.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +119,7 @@
       <workItem from="1685802949063" duration="247000" />
       <workItem from="1685803218778" duration="621000" />
       <workItem from="1685803942509" duration="82000" />
-      <workItem from="1685804043373" duration="7318000" />
+      <workItem from="1685804043373" duration="7685000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -252,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685806302845</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="il form funziona correttamente. l'immagine viene caricata e salvata">
+      <created>1685813859351</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685813859351</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +327,8 @@
     <MESSAGE value="modifica del meccanismo navbar" />
     <MESSAGE value="aggiunta tasto per vendere un oggetto" />
     <MESSAGE value="creazione dell'interfaccia di creazione dell'oggetto" />
-    <option name="LAST_COMMIT_MESSAGE" value="creazione dell'interfaccia di creazione dell'oggetto" />
+    <MESSAGE value="il form funziona correttamente. l'immagine viene caricata e salvata" />
+    <option name="LAST_COMMIT_MESSAGE" value="il form funziona correttamente. l'immagine viene caricata e salvata" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
