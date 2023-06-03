@@ -92,7 +92,23 @@ class TradeRepository{
         return $rows;
     }
 
-
+    public static function deleteOggetto(int $id): bool{
+        $pdo = Connection::getInstance();
+        try {
+            $pdo->beginTransaction();
+            $sql = 'DELETE FROM oggetto WHERE id=:id';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                    'id' => $id,
+                ]
+            );
+            $pdo->commit();
+            return true;
+        } catch (BadMessageException $e) {
+            $pdo->rollBack();
+            return false;
+        }
+    }
     public static function getOggetto(int $id): array{
         $pdo = Connection::getInstance();
         $sql = 'SELECT oggetto.id as id, nome, oggetto.descrizione as descrizione, id_offerente, id_richiedente, immagine,  data_offerta, data_scambio, categoria.descrizione as categoria FROM oggetto, categoria WHERE categoria.id = id_categoria and oggetto.id=:id';

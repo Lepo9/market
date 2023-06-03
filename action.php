@@ -45,10 +45,12 @@ if($action == 'messaggio'){
     exit(0);
 }
 
+if($action == 'elimina_oggetto'){
+    TradeRepository::deleteOggetto($_POST['id_oggetto']);
+    header('Location: miei_oggetti.php');
+    exit(0);
+}
 
-
-
-echo $template->render('scritta', [
-
-]);
+header('Location: index.php');
+exit(0);
 
