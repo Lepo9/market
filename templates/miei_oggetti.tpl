@@ -28,6 +28,7 @@
         <th>Data dell'offerta</th>
         <th>Stato</th>
         <th>Visualizza</th>
+        <th>Modifica</th>
         <th>Elimina</th>
     </tr>
     </thead>
@@ -45,18 +46,29 @@
                 <?php endif; ?>
             </td>
             <td>
-                <form method="get" action="./mio_oggetto.php">
+                <form method="get" action="./mio_oggetto.php" class="text-center">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
                     <button class="btn btn-sm"><i class="icon icon-message"></i></button>
                 </form>
             </td>
-            <td>
-                <form method="post" action="./action.php">
-                    <input type="hidden" name="action" value="elimina_oggetto">
-                    <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
-                    <button class="btn btn-sm"><i class="icon icon-delete text-error"></i></button>
-                </form>
-            </td>
+            <?php if ($oggetto['data_scambio'] == null): ?>
+                <td>
+                    <form method="post" action="./vendita.php" class="text-center">
+                        <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
+                        <button class="btn btn-sm"><i class="icon icon-edit text-warning"></i></button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="./action.php" class="text-center">
+                        <input type="hidden" name="action" value="elimina_oggetto">
+                        <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
+                        <button class="btn btn-sm"><i class="icon icon-delete text-error"></i></button>
+                    </form>
+                </td>
+            <?php else: ?>
+                <td></td>
+                <td></td>
+            <?php endif; ?>
         </tr>
     <?php endforeach; ?>
     </tbody>

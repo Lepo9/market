@@ -23,6 +23,27 @@ $messaggio = "";
 $nome = "";
 $descrizione = "";
 
+if(isset($_POST['id_oggetto'])){
+    $oggetto = TradeRepository::getRawOggetto($_POST['id_oggetto']);
+    $nome = $oggetto['nome'];
+    $descrizione = $oggetto['descrizione'];
+    $categoria = $oggetto['id_categoria'];
+
+    $categorie = TradeRepository::getCategorie();
+
+    echo $template->render('aggiungi', [
+        'id_oggetto' => $_POST['id_oggetto'],
+        'messaggio' => "Se avevi già inserito un oggetto, verrà sovrascritto. L'immagine verrà mantenuta se non viene selezionata una nuova.",
+        'errore' => "",
+        'nome' => $nome,
+        'descrizione' => $descrizione,
+        'id_categoria' => $categoria,
+        'utente' => TradeRepository::getUtente($id_user),
+        'categorie' => $categorie
+    ]);
+    exit(0);
+}
+
 if (isset($_POST['categoria'])) {
 
     $nome = $_POST['nome'];

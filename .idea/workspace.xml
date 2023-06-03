@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="errori e mantenimento dei campi">
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="tasto elimina dinamico">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TradeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TradeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action.php" beforeDir="false" afterPath="$PROJECT_DIR$/action.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/aggiungi.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aggiungi.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/miei_oggetti.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/miei_oggetti.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendita.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendita.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +122,7 @@
       <workItem from="1685802949063" duration="247000" />
       <workItem from="1685803218778" duration="621000" />
       <workItem from="1685803942509" duration="82000" />
-      <workItem from="1685804043373" duration="9850000" />
+      <workItem from="1685804043373" duration="10852000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -285,7 +285,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685815794538</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="possibilità di eliminare un oggetto">
+      <created>1685816245337</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1685816245337</updated>
+    </task>
+    <task id="LOCAL-00025" summary="viene anche eliminata l'immagine dalla memoria">
+      <created>1685816493620</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1685816493620</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +377,10 @@
     <MESSAGE value="presentazione corretta delle immagini" />
     <MESSAGE value="presentazione delle righe della descrizione" />
     <MESSAGE value="errori e mantenimento dei campi" />
-    <option name="LAST_COMMIT_MESSAGE" value="errori e mantenimento dei campi" />
+    <MESSAGE value="possibilità di eliminare un oggetto" />
+    <MESSAGE value="viene anche eliminata l'immagine dalla memoria" />
+    <MESSAGE value="tasto elimina dinamico" />
+    <option name="LAST_COMMIT_MESSAGE" value="tasto elimina dinamico" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

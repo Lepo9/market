@@ -35,6 +35,9 @@
 
 
 <form action="./vendita.php" method="post" enctype="multipart/form-data">
+    <?php if(isset($id_oggetto)): ?>
+        <input type="hidden" name="id_oggetto_vecchio" value="<?= $id_oggetto ?>">
+    <?php endif; ?>
 <div class="form-group">
     <label class="form-label" for="input-example-1">Nome</label>
     <input class="form-input" type="text" id="input-example-1" placeholder="Inserisci il nome del prodotto" name="nome" required value="<?= $nome ?>">
@@ -49,12 +52,21 @@
 </div>
 <div class="form-group">
     <label class="form-label" for="input-example-4">Categoria</label>
+    <?php if(isset($id_categoria)): ?>
+        <select id="input-example-4" class="form-select" name="categoria">
+            <option value="0">Seleziona una categoria</option>
+            <?php foreach ($categorie as $categoria): ?>
+                <option value="<?php echo $categoria['id'] ?>" <?php if($categoria['id'] == $id_categoria) echo "selected";?>><?php echo $categoria['descrizione'] ?></option>
+            <?php endforeach; ?>
+        </select>
+    <?php else: ?>
     <select id="input-example-4" class="form-select" name="categoria">
         <option value="0">Seleziona una categoria</option>
         <?php foreach ($categorie as $categoria): ?>
             <option value="<?php echo $categoria['id'] ?>"><?php echo $categoria['descrizione'] ?></option>
         <?php endforeach; ?>
     </select>
+    <?php endif; ?>
 </div>
 <div class="form-group">
     <input class="btn" type="submit" value="Carica l'oggetto!">

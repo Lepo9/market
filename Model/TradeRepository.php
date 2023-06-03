@@ -132,7 +132,17 @@ class TradeRepository{
         $row = $stmt->fetch();
         return $row;
     }
-
+    public static function getRawOggetto(int $id): array{
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT * FROM oggetto WHERE id=:id';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'id' => $id,
+            ]
+        );
+        $row = $stmt->fetch();
+        return $row;
+    }
     //ottiene i dati di una persona
     public static function getUtente(int $id): array{
         $pdo = Connection::getInstance();
