@@ -3,6 +3,7 @@
  * Questo commento serve solo a eliminare l'indicazione di errore
  * @var $oggetti_disponibili
  * @var $utente
+ * @var $messaggio
  */
 ?>
 
@@ -19,7 +20,11 @@
 <p>Il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
 
 <div class="divider"></div>
-<h3>Questi sono tutti gli oggetti disponibili</h3>
+<h3><?php echo $messaggio ?></h3>
+
+<?php if($oggetti_disponibili == null): ?>
+    <p>Non ci sono oggetti disponibili</p>
+<?php else: ?>
 <table class="table table-striped table-hover">
     <thead>
     <tr>
@@ -47,4 +52,4 @@
     <?php endforeach; ?>
     </tbody>
 </table>
-
+<?php endif; ?>
