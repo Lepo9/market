@@ -9,9 +9,44 @@ require_once 'conf/config.php';
 use League\Plates\Engine;
 use Model\TradeRepository;
 use Util\Authenticator;
+use Model\UserRepository;
 
 
 $template = new Engine('templates', 'tpl');
+
+
+
+
+if(!isset($_POST['action'])){
+    header('Location: index.php');
+    exit(0);
+}
+
+$action = $_POST['action'];
+
+
+if($action == 'registrazione'){
+    $nome = $_POST['nome'];
+    $cognome = $_POST['cognome'];
+    $email = $_POST['e-mail'];
+    $password1 = $_POST['password1'];
+    $password2 = $_POST['password2'];
+
+    if($password1 != $password2){
+        header('Location: registrazione.php?errore=1');
+        exit(0);
+    }
+
+    if(UserRepository::emailInUso($email)){
+        header('Location: registrazione.php?errore=2');
+        exit(0);
+    }
+
+    $esito = UserRepository::newUtente($nome, $cognome, $email, $password1);
+    var_dump($esito);
+    header('Location: index.php');
+    exit(0);
+}
 
 
 $user = Authenticator::getUser();
@@ -21,13 +56,6 @@ if (!isset($user['user_id'])) {
     exit(0);
 }
 $id_user = $user['user_id'];
-
-if(!isset($_POST['action'])){
-    header('Location: index.php');
-    exit(0);
-}
-
-$action = $_POST['action'];
 
 if($action == 'compra'){
 
@@ -49,6 +77,8 @@ if($action == 'elimina_oggetto'){
     header('Location: miei_oggetti.php');
     exit(0);
 }
+
+
 
 header('Location: index.php');
 exit(0);

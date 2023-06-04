@@ -477,4 +477,23 @@ class TradeRepository{
         $rows = $stmt->fetchAll();
         return $rows;
     }
+
+    public static function emailInUso(string $email)
+    {
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT * FROM utente WHERE email = :email';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'email' => $email
+            ]
+        );
+        $rows = $stmt->fetchAll();
+        if (count($rows) > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }
