@@ -11,6 +11,7 @@
  * @var $search
  * @var $pagename
  * @var $sv
+ * @var $mr
  */
 ?>
 <html lang="it">
@@ -54,7 +55,7 @@
             <section class="navbar-center mt-2">
                 <form method="get" action="./<?=$pagename?>" class="mt-2">
                     <div class="input-group input-inline">
-                        <input class="form-input input" type="text" name="search" placeholder="Cerca un oggetto" value="<?= $sv ?>">
+                        <input class="form-input input" type="text" name="search" placeholder="<?= $mr?>" value="<?= $sv ?>">
                         <button class="btn btn-primary btn input-group-btn">Search</button>
                     </div>
                 </form>

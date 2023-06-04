@@ -19,6 +19,7 @@
     'search' => true,
     'pagename' => 'index.php',
     'sv' => '',
+    'mr' => 'Cerca oggetti in vendita'
 ]);?>
 
 

@@ -17,7 +17,8 @@
     'comprati' => true,
     'search' => true,
     'pagename' => 'miei_oggetti.php',
-    'sv' => $ricerca
+    'sv' => $ricerca,
+    'mr' => 'Cerca tra i tuoi oggetti'
 ]);?>
 
 <h4>Benvenut* <?php echo $utente['nome'] ?></h4>

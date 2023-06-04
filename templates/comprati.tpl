@@ -17,7 +17,8 @@
     'comprati' => false,
     'search' => true,
     'pagename' => 'comprati.php',
-    'sv' => $ricerca
+    'sv' => $ricerca,
+    'mr' => 'Cerca tra i comprati'
 
 ]);
 ?>

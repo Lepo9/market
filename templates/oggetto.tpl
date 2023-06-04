@@ -18,6 +18,7 @@
     'search' => true,
     'pagename' => 'index.php',
     'sv' => '',
+    'mr' => 'Cerca oggetti in vendita'
 ]);?>
 
 <?php if($utente['id'] != $oggetto['id_offerente']): ?>

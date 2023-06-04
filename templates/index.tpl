@@ -17,7 +17,8 @@
         'comprati' => true,
         'search' => true,
         'pagename' => 'index.php',
-        'sv' => $ricerca
+        'sv' => $ricerca,
+        'mr' => 'Cerca oggetti in vendita'
 ]);?>
 
 <h4>Benvenut* <?php echo $utente['nome'] ?></h4>
