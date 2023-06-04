@@ -25,7 +25,6 @@ $this->layout('home', [
     'logout' => $logout,
     'vendita' => $logout,
     'comprati' => $logout,
-    'logout' => $logout,
     'login' => $login,
     'search' => true,
     'pagename' => 'index.php',
@@ -37,7 +36,8 @@ $this->layout('home', [
 <?php if ($utente == null): ?>
     <div class="columns">
         <div class="column col-6 col-mx-auto">
-            <i>Per contattare il venditore o comprare l'oggetto, devi prima effettuare il <a href="./login.php">login</a>.</i>
+            <i>Per contattare il venditore o comprare l'oggetto, devi prima effettuare il <!--suppress HtmlUnknownTarget -->
+                <a href="./login.php">login</a>.</i>
             <p>Oggetto venduto da <?php echo $offerente['nome'] ?></p>
         </div>
     </div>
@@ -59,6 +59,7 @@ $this->layout('home', [
 
         <p><?= $utente['nome'] ?>, il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
         <?php if ($canBuy): ?>
+            <!--suppress HtmlUnknownTarget -->
             <form class="form-horizontal" action="./action.php" method="post">
                 <div class="form-group">
                     <div class="col-9 col-sm-12">
@@ -75,14 +76,15 @@ $this->layout('home', [
 
             <p>In alternativa, puoi metterti in contatto con il venditore per chiedergli informazioni</p>
             <div class="divider"></div>
+            <!--suppress HtmlUnknownTarget -->
             <form action="./action.php" method="post">
                 <div class="form-group">
                     <input type="hidden" name="action" value="messaggio">
                     <input type="hidden" name="pagina" value="oggetto.php">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id'] ?>">
                     <input type="hidden" name="id_destinatario" value="<?php echo $offerente['id'] ?>">
-                    <label class="form-label" for="input-example-1">Manda un mesaggio a <?= $offerente['nome'] ?></label>
-                    <textarea class="form-input" id="input-example-3" placeholder="Scrivi un messaggio" name="testo" rows="5"></textarea>
+                    <label class="form-label" for="input-example-1">Manda un messaggio a <?= $offerente['nome'] ?></label>
+                    <textarea class="form-input" id="input-example-1" placeholder="Scrivi un messaggio" name="testo" rows="5"></textarea>
                     <button class="btn">Invia!</button>
                 </div>
             </form>

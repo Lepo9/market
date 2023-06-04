@@ -35,6 +35,7 @@
 
 
 
+<!--suppress HtmlUnknownTarget -->
 <form action="./vendita.php" method="post" enctype="multipart/form-data">
     <?php if(isset($id_oggetto)): ?>
         <input type="hidden" name="id_oggetto_vecchio" value="<?= $id_oggetto ?>">

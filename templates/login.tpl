@@ -17,12 +17,14 @@
 ]);?>
 
 <h1>Login</h1>
-<h3><i>oppure <a href="./registrazione.php">registrati</a></i></h3>
+<h3><i>oppure <!--suppress HtmlUnknownTarget -->
+        <a href="./registrazione.php">registrati</a></i></h3>
 <?php if($login_fallito):?>
     <div class="toast toast-error">
         Credenziali non corrette, riprova.
     </div>
 <?php endif; ?>
+<!--suppress HtmlUnknownTarget -->
 <form class="form" action="index.php" method="post">
     <div class="form-group">
         <label class="form-label" for="email">Email</label>

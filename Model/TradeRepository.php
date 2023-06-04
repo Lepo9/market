@@ -4,6 +4,7 @@ namespace Model;
 
 require 'vendor/autoload.php';
 use http\Exception\BadMessageException;
+use PDOException;
 use Util\Connection;
 
 
@@ -29,6 +30,7 @@ class TradeRepository{
             $pdo->commit();
             return true;
         } catch (BadMessageException $e) {
+            var_dump($e);
             $pdo->rollBack();
             return false;
         }
@@ -88,8 +90,7 @@ class TradeRepository{
         $sql = 'SELECT * FROM categoria order by descrizione asc ';
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
-        $rows = $stmt->fetchAll();
-        return $rows;
+        return $stmt->fetchAll();
     }
 
     public static function deleteOggetto(int $id): bool{
@@ -117,6 +118,7 @@ class TradeRepository{
             $pdo->commit();
             return true;
         } catch (BadMessageException $e) {
+            var_dump($e);
             $pdo->rollBack();
             return false;
         }
@@ -131,8 +133,7 @@ class TradeRepository{
         );
         if ($stmt->rowCount() == 0)
             return [];
-        $row = $stmt->fetch();
-        return $row;
+        return $stmt->fetch();
     }
     public static function getRawOggetto(int $id): array{
         $pdo = Connection::getInstance();
@@ -142,8 +143,7 @@ class TradeRepository{
                 'id' => $id,
             ]
         );
-        $row = $stmt->fetch();
-        return $row;
+        return $stmt->fetch();
     }
     //ottiene i dati di una persona
     public static function getUtente(int $id): array{
@@ -154,27 +154,7 @@ class TradeRepository{
                 'id' => $id,
             ]
         );
-        $row = $stmt->fetch();
-        return $row;
-    }
-
-
-
-    public static function setOggetto (int $id, string $nome, string $descrizione, string $immagine, int $id_categoria): bool{
-        $pdo = Connection::getInstance();
-        $sql = 'UPDATE oggetto SET nome = :nome, descrizione = :descrizione, immagine = :immagine, id_categoria = :id_categoria WHERE id = :id';
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-                'id' => $id,
-                'nome' => $nome,
-                'descrizione' => $descrizione,
-                'immagine' => $immagine,
-                'id_categoria' => $id_categoria
-            ]
-        );
-        if ($stmt->rowCount() == 1)
-            return true;
-        return false;
+        return $stmt->fetch();
     }
 
     public static function canBuy (int $id_user): bool{
@@ -190,19 +170,6 @@ class TradeRepository{
             return false;
         return true;
     }
-
-    public static function getCategoria(int $id): string{
-        $pdo = Connection::getInstance();
-        $sql = 'SELECT descrizione FROM categoria WHERE id = :id';
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-                'id' => $id
-            ]
-        );
-        $row = $stmt->fetch();
-        return $row['descrizione'];
-    }
-
 
     public static function newMessaggio(int $id_mittente, int $id_destinatario, string $testo, int $id_oggetto): bool{
         $pdo = Connection::getInstance();
@@ -237,7 +204,7 @@ class TradeRepository{
         return false;
     }
 
-    //funzione che permette di ottenere i messaggi relativi ad un oggetto
+    //funzione che permette di ottenere i messaggi relativi a un oggetto
     public static function getMessaggi(int $id_oggetto): array{
         $pdo = Connection::getInstance();
         $sql = 'SELECT messaggio.id as id, id_mittente, id_destinatario, testo, messaggio.data as data FROM messaggio WHERE id_oggetto = :id_oggetto ORDER BY messaggio.data ASC';
@@ -246,13 +213,12 @@ class TradeRepository{
                 'id_oggetto' => $id_oggetto,
             ]
         );
-        $rows = $stmt->fetchAll();
-        return $rows;
+        return $stmt->fetchAll();
     }
 
     public static function editOggetto(int $id,  $nome,  $descrizione,  $immagine,  $id_categoria): bool{
         $pdo = Connection::getInstance();
-        if (substr($immagine, 0,1) != '.') {
+        if (!str_starts_with($immagine, '.')) {
             //elimino l'immagine precedente
             $sql = 'SELECT immagine FROM oggetto WHERE id = :id';
             $stmt = $pdo->prepare($sql);
@@ -281,22 +247,7 @@ class TradeRepository{
         return false;
     }
 
-    public static function isVendibile(int $id_oggetto): bool{
-        $pdo = Connection::getInstance();
-        $sql = 'SELECT id_richiedente FROM oggetto WHERE id = :id_oggetto';
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-                'id_oggetto' => $id_oggetto,
-            ]
-        );
-        $row = $stmt->fetch();
-        if ($row['id_richiedente'] == null)
-            return true;
-        return false;
-    }
 
-    //funzione che permette di comprare un oggetto
-    //verrà sottratto un gettone al compratore e aggiunto uno al venditore
     public static function buyOggetto(int $id_oggetto, int $id_compratore): bool{
         $pdo = Connection::getInstance();
         try {
@@ -353,11 +304,10 @@ class TradeRepository{
                 'idu' => $id_current_user
             ]
         );
-        $rows = $stmt->fetchAll();
-        return $rows;
+        return $stmt->fetchAll();
     }
 
-    public static function getMieiOggetti(int $id_user)
+    public static function getMieiOggetti(int $id_user): bool|array
     {
         $pdo = Connection::getInstance();
         $sql = 'SELECT * FROM ogg_off WHERE id_offerente = :idu order by data_offerta desc';
@@ -366,14 +316,13 @@ class TradeRepository{
                 'idu' => $id_user
             ]
         );
-        $rows = $stmt->fetchAll();
-        return $rows;
+        return $stmt->fetchAll();
     }
 
     //ottiene tutti i messaggi ricevuti o mandati da un utente per un oggetto
     public static function getMessaggiUtente(int $id_oggetto, int $id_user): array{
         //prendo tutti gli utenti che hanno mandato un messaggio per l'oggetto
-        //prendo nome, cognome ed id
+        //prendo nome, cognome e id
         $pdo = Connection::getInstance();
         $sql = 'SELECT DISTINCT utente.id as id, nome, cognome FROM utente, messaggio WHERE utente.id = messaggio.id_mittente AND id_oggetto = :id_oggetto AND id_destinatario = :id_user';
         $stmt = $pdo->prepare($sql);
@@ -425,7 +374,7 @@ class TradeRepository{
         return $data;
     }
 
-    public static function getOggettiComprati(int $id_user)
+    public static function getOggettiComprati(int $id_user): bool|array
     {
         $pdo = Connection::getInstance();
         $sql = 'SELECT oggetto.id as id, nome, oggetto.descrizione as descrizione, id_offerente, id_richiedente, immagine,  data_offerta, data_scambio, categoria.descrizione as categoria FROM oggetto, categoria WHERE categoria.id = id_categoria and id_richiedente = :idu order by data_offerta desc';
@@ -434,11 +383,10 @@ class TradeRepository{
                 'idu' => $id_user
             ]
         );
-        $rows = $stmt->fetchAll();
-        return $rows;
+        return $stmt->fetchAll();
     }
 
-    public static function getOggettiDisponibiliRicerca(int $id_user, string $search)
+    public static function getOggettiDisponibiliRicerca(int $id_user, string $search): bool|array
     {
         $pdo = Connection::getInstance();
         $sql = 'SELECT * FROM oggetti_disponibili WHERE id_utente != :idu and (nome like :search) order by data_offerta desc';
@@ -448,11 +396,10 @@ class TradeRepository{
                 'search' => '%'.$search.'%'
             ]
         );
-        $rows = $stmt->fetchAll();
-        return $rows;
+        return $stmt->fetchAll();
     }
 
-    public static function getCompratiRicerca(int $id_user, string $search)
+    public static function getCompratiRicerca(int $id_user, string $search): bool|array
     {
         $pdo = Connection::getInstance();
         $sql = 'SELECT oggetto.id as id, nome, oggetto.descrizione as descrizione, id_offerente, id_richiedente, immagine,  data_offerta, data_scambio, categoria.descrizione as categoria FROM oggetto, categoria WHERE categoria.id = id_categoria and id_richiedente = :idu and (nome like :search) order by data_offerta desc';
@@ -462,11 +409,10 @@ class TradeRepository{
                 'search' => '%'.$search.'%'
             ]
         );
-        $rows = $stmt->fetchAll();
-        return $rows;
+        return $stmt->fetchAll();
     }
 
-    public static function getMieiOggettiRicerca(mixed $id_user, mixed $search)
+    public static function getMieiOggettiRicerca(mixed $id_user, mixed $search): bool|array
     {
         $pdo = Connection::getInstance();
         $sql = 'SELECT * FROM ogg_off WHERE id_offerente = :idu and (nome like :search) order by data_offerta desc';
@@ -476,28 +422,10 @@ class TradeRepository{
                 'search' => '%'.$search.'%'
             ]
         );
-        $rows = $stmt->fetchAll();
-        return $rows;
+        return $stmt->fetchAll();
     }
 
-    public static function emailInUso(string $email)
-    {
-        $pdo = Connection::getInstance();
-        $sql = 'SELECT * FROM utente WHERE email = :email';
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-                'email' => $email
-            ]
-        );
-        $rows = $stmt->fetchAll();
-        if (count($rows) > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public static function oggettiDisponibiliRicerca(string $search)
+    public static function oggettiDisponibiliRicerca(string $search): bool|array
     {
         $pdo = Connection::getInstance();
         $sql = 'SELECT * FROM oggetti_disponibili WHERE (nome like :search) order by data_offerta desc';
@@ -506,17 +434,15 @@ class TradeRepository{
                 'search' => '%'.$search.'%'
             ]
         );
-        $rows = $stmt->fetchAll();
-        return $rows;
+        return $stmt->fetchAll();
     }
 
-    public static function oggettiDisponibili()
+    public static function oggettiDisponibili(): bool|array
     {
         $pdo = Connection::getInstance();
         $sql = 'SELECT * FROM oggetti_disponibili order by data_offerta desc';
         $stmt = $pdo->query($sql);
-        $rows = $stmt->fetchAll();
-        return $rows;
+        return $stmt->fetchAll();
     }
 
 }

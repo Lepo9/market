@@ -16,7 +16,7 @@ class Authenticator{
     /**
 
      */
-    private static function start()
+    private static function start(): void
     {
         if (session_id() == "")
             session_start();
@@ -47,7 +47,7 @@ class Authenticator{
         return $_SESSION;
     }
 
-    public static function logout()
+    public static function logout(): void
     {
         self::start();
         $_SESSION = [];

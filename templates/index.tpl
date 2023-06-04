@@ -65,6 +65,7 @@ $this->layout('home', [
             <td><?php echo $oggetto['data_offerta'] ?></td>
             <td><?php echo $oggetto['nomeu']." ".$oggetto["cognomeu"] ?></td>
             <td>
+                <!--suppress HtmlUnknownTarget -->
                 <form method="get" action="./oggetto.php">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
                     <button class="btn btn-sm"><i class="icon icon-message"></i></button>

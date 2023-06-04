@@ -28,7 +28,8 @@
 <h3><?php echo $messaggio ?></h3>
 
 <?php if($oggetti == null): ?>
-    <p>Non hai mai venduto un oggetto. Fai la prima vendita <a href="./vendita.php">qui</a></p>
+    <p>Non hai mai venduto un oggetto. Fai la prima vendita <!--suppress HtmlUnknownTarget -->
+        <a href="./vendita.php">qui</a></p>
 <?php else: ?>
 <table class="table table-striped table-hover">
     <thead>
@@ -56,6 +57,7 @@
                 <?php endif; ?>
             </td>
             <td>
+                <!--suppress HtmlUnknownTarget -->
                 <form method="get" action="./mio_oggetto.php" class="text-center">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
                     <button class="btn btn-sm"><i class="icon icon-message"></i></button>
@@ -63,12 +65,14 @@
             </td>
             <?php if ($oggetto['data_scambio'] == null): ?>
                 <td>
+                    <!--suppress HtmlUnknownTarget -->
                     <form method="post" action="./vendita.php" class="text-center">
                         <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
                         <button class="btn btn-sm"><i class="icon icon-edit text-warning"></i></button>
                     </form>
                 </td>
                 <td>
+                    <!--suppress HtmlUnknownTarget -->
                     <form method="post" action="./action.php" class="text-center">
                         <input type="hidden" name="action" value="elimina_oggetto">
                         <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">

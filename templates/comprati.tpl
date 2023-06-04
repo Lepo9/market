@@ -47,6 +47,7 @@
             <td><?php echo $oggetto['categoria'] ?></td>
             <td><?php echo $oggetto['data_scambio'] ?></td>
             <td>
+                <!--suppress HtmlUnknownTarget -->
                 <form method="get" action="./oggetto_scambiato.php">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id'] ?>">
                     <button class="btn btn-sm"><i class="icon icon-message"></i></button>

@@ -4,7 +4,6 @@ require_once 'vendor/autoload.php';
 require_once 'conf/config.php';
 
 use League\Plates\Engine;
-use Model\TradeRepository;
 use Util\Authenticator;
 
 $template = new Engine('templates','tpl');

@@ -21,8 +21,11 @@ if (!isset($login)) $login = false;
 <html lang="it">
 <head>
     <meta charset="UTF-8">
+    <!--suppress JSUnresolvedLibraryURL -->
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <!--suppress JSUnresolvedLibraryURL -->
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <!--suppress JSUnresolvedLibraryURL -->
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
     <title><?=$this->e($titolo)?></title>
 </head>
@@ -39,18 +42,21 @@ if (!isset($login)) $login = false;
 
         <?php if($oggetti):?>
             <section class="navbar-center">
-                    <a href="./miei_oggetti.php"><button class="btn m-2">I miei oggetti in vendita</button></a>
+                    <!--suppress HtmlUnknownTarget -->
+                <a href="./miei_oggetti.php"><button class="btn m-2">I miei oggetti in vendita</button></a>
             </section>
         <?php endif;?>
 
         <?php if($vendita):?>
         <section class="navbar-center">
+            <!--suppress HtmlUnknownTarget -->
             <a href="./vendita.php"><button class="btn m-2">Vendi un oggetto</button></a>
         </section>
         <?php endif;?>
 
         <?php if($comprati):?>
             <section class="navbar-center">
+                <!--suppress HtmlUnknownTarget -->
                 <a href="./comprati.php"><button class="btn m-2">Oggetti comprati</button></a>
             </section>
         <?php endif;?>
@@ -59,6 +65,7 @@ if (!isset($login)) $login = false;
             <section class="navbar-center mt-2">
                 <form method="get" action="./<?=$pagename?>" class="mt-2">
                     <div class="input-group input-inline">
+                        <!--suppress HtmlFormInputWithoutLabel -->
                         <input class="form-input input" type="text" name="search" placeholder="<?= $mr?>" value="<?= $sv ?>">
                         <button class="btn btn-primary btn input-group-btn">Search</button>
                     </div>
@@ -74,6 +81,7 @@ if (!isset($login)) $login = false;
 
         <?php if($login):?>
             <section class="navbar-center">
+                <!--suppress HtmlUnknownTarget -->
                 <a href="./login.php"><button class="btn m-2">Login</button></a>
             </section>
         <?php endif;?>

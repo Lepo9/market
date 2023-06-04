@@ -12,7 +12,9 @@
   "require": {
     "league/plates": "^3.4",
     "ext-pdo": "*",
-    "intervention/image": "^2.7"
+    "intervention/image": "^2.7",
+    "ext-http": "*",
+    "ext-gd": "*"
   },
   "autoload": {
     "psr-4": {

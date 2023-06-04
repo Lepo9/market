@@ -27,6 +27,7 @@
 <h1>Registrazione</h1>
 <h3>Inserisci i tuoi dati</h3>
 
+<!--suppress HtmlUnknownTarget -->
 <form class="form" action="./action.php" method="post">
     <input type="hidden" name="action" value="registrazione">
     <div class="form-group">
@@ -54,7 +55,8 @@
     </div>
 </form>
 
-<p>In caso di esito positivo, verrai reinderizzato alla pagina di login!</p>
+<p>In caso di esito positivo, verrai reindirizzato alla pagina di login!</p>
 
 <h5>Sei già registrato?</h5>
-<p><i>fai il <a href="./index.php">login</a></i></p>
+<p><i>fai il <!--suppress HtmlUnknownTarget -->
+        <a href="./index.php">login</a></i></p>

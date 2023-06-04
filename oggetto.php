@@ -12,7 +12,7 @@ $template = new Engine('templates','tpl');
 
 //recupero dalla get id_oggetto
 $id_oggetto = $_GET['id_oggetto'];
-// se non è settato, reinderizzo alla home
+// se non è settato, reindirizzo alla home
 if (!isset($id_oggetto)) {
     header('Location: index.php');
     exit;

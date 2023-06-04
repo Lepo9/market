@@ -36,7 +36,7 @@
         <div class="column col-6">
         <h3>Categoria: <?php echo $oggetto['categoria']?></h3>
 
-        <?php if ($acquirente != false): ?>
+        <?php if ($acquirente): ?>
             <p>L'oggetto era stato messo in vendita il <?php echo $oggetto['data_offerta'] ?></p>
             <p>L'oggetto è stato comprato da <?php echo $acquirente['nome'] ?> <?php echo $acquirente['cognome'] ?> il <?php echo $oggetto['data_scambio'] ?></p>
         <?php else: ?>
@@ -61,7 +61,7 @@
 
 <h3>Questi sono i messaggi che i vari utenti ti hanno scritto</h3>
 
-<?php if ($chats != false): ?>
+<?php if ($chats): ?>
     <?php foreach ($chats as $chat): ?>
             <h5>Chat con <?php echo $chat['nome'] ?> <?php echo $chat['cognome'] ?></h5>
 
@@ -91,14 +91,15 @@
             <?php if ($oggetto['data_scambio'] != null): ?>
                 <p>Non puoi più rispondere a questa chat, l'oggetto è stato venduto</p>
             <?php else: ?>
-            <form action="./action.php" method="post">
+            <!--suppress HtmlUnknownTarget -->
+                <form action="./action.php" method="post">
                 <div class="form-group">
                     <input type="hidden" name="action" value="messaggio">
                     <input type="hidden" name="pagina" value="mio_oggetto.php">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id'] ?>">
                     <input type="hidden" name="id_destinatario" value="<?php echo $chat['id'] ?>">
                     <label class="form-label" for="input-example-1">Rispondi a <?= $chat['nome'] ?></label>
-                    <textarea class="form-input" id="input-example-3" placeholder="Scrivi un messaggio" name="testo" rows="2"></textarea>
+                    <textarea class="form-input" id="input-example-1" placeholder="Scrivi un messaggio" name="testo" rows="2"></textarea>
                     <button class="btn">Invia!</button>
                 </div>
             </form>
