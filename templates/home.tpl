@@ -19,7 +19,6 @@
     <title><?=$this->e($titolo)?></title>
 </head>
 <body>
-<div class="divider"></div>
 <header class="navbar">
     <section class="navbar-section"></section>
 
@@ -58,6 +57,10 @@
 
     <section class="navbar-section"></section>
 </header>
+
+
+<div class="divider"></div>
+
 <div class="container grid-lg">
 <!--Questa parte sarà sempre così e serve a includere
 il template che contiene il contenuto vero e proprio-->
