@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="Messaggio ersonalizzato per ogni pagina">
-      <change afterPath="$PROJECT_DIR$/registrazione.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registrazione.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TradeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TradeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action.php" beforeDir="false" afterPath="$PROJECT_DIR$/action.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.tpl" afterDir="false" />
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="Registrazione funzionante">
+      <change beforePath="$PROJECT_DIR$/templates/registrazione.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registrazione.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -394,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685896315494</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Registrazione funzionante">
+      <created>1685898466183</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1685898466183</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +455,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit" />
     <MESSAGE value="modifica del meccanismo navbar" />
     <MESSAGE value="aggiunta tasto per vendere un oggetto" />
     <MESSAGE value="creazione dell'interfaccia di creazione dell'oggetto" />
@@ -479,7 +479,8 @@
     <MESSAGE value="Ricerca tra gli oggetti venduti" />
     <MESSAGE value="Ricerca in tutte le pagine" />
     <MESSAGE value="Messaggio ersonalizzato per ogni pagina" />
-    <option name="LAST_COMMIT_MESSAGE" value="Messaggio ersonalizzato per ogni pagina" />
+    <MESSAGE value="Registrazione funzionante" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registrazione funzionante" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

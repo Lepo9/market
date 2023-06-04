@@ -53,5 +53,7 @@
     </div>
 </form>
 
+<p>In caso di esito positivo, verrai reinderizzato alla pagina di login!</p>
+
 <h5>Sei già registrato?</h5>
 <p><i>fai il <a href="./index.php">login</a></i></p>
