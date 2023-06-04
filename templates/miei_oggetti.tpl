@@ -3,6 +3,8 @@
  * Questo commento serve solo a eliminare l'indicazione di errore
  * @var $oggetti
  * @var $utente
+ * @var $ricerca
+ * @var $messaggio
  */
 ?>
 
@@ -13,13 +15,20 @@
     'logout' => true,
     'vendita' => true,
     'comprati' => true,
+    'search' => true,
+    'pagename' => 'miei_oggetti.php',
+    'sv' => $ricerca
 ]);?>
 
 <h4>Benvenut* <?php echo $utente['nome'] ?></h4>
 <p>Il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
 
 <div class="divider"></div>
-<h3>Questi sono i tuoi oggetti in vendita</h3>
+<h3><?php echo $messaggio ?></h3>
+
+<?php if($oggetti == null): ?>
+    <p>Non hai mai venduto un oggetto. Fai la prima vendita <a href="./vendita.php">qui</a></p>
+<?php else: ?>
 <table class="table table-striped table-hover">
     <thead>
     <tr>
@@ -73,4 +82,5 @@
     <?php endforeach; ?>
     </tbody>
 </table>
+<?php endif; ?>
 

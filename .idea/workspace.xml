@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="funzione di ricerca nella home">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TradeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TradeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprati.php" beforeDir="false" afterPath="$PROJECT_DIR$/comprati.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/aggiungi.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aggiungi.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/comprati.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/comprati.tpl" afterDir="false" />
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="Ricerca tra gli oggetti comprati">
+      <change beforePath="$PROJECT_DIR$/templates/login.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/miei_oggetti.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/miei_oggetti.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +121,7 @@
       <workItem from="1685803218778" duration="621000" />
       <workItem from="1685803942509" duration="82000" />
       <workItem from="1685804043373" duration="14410000" />
-      <workItem from="1685893717474" duration="1611000" />
+      <workItem from="1685893717474" duration="1914000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -364,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685895004945</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Ricerca tra gli oggetti comprati">
+      <created>1685895507231</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1685895507231</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +428,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="messaggi visualizzati per righe" />
     <MESSAGE value="i miei oggetti in vendita" />
     <MESSAGE value="adattamento a link bottoni" />
     <MESSAGE value="miei oggetti" />
@@ -449,7 +452,8 @@
     <MESSAGE value="creazione metodo di ricerca e modifica pagina php" />
     <MESSAGE value="presentazione del messaggio" />
     <MESSAGE value="funzione di ricerca nella home" />
-    <option name="LAST_COMMIT_MESSAGE" value="funzione di ricerca nella home" />
+    <MESSAGE value="Ricerca tra gli oggetti comprati" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ricerca tra gli oggetti comprati" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

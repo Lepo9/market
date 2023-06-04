@@ -463,4 +463,18 @@ class TradeRepository{
         $rows = $stmt->fetchAll();
         return $rows;
     }
+
+    public static function getMieiOggettiRicerca(mixed $id_user, mixed $search)
+    {
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT * FROM ogg_off WHERE id_offerente = :idu and (nome like :search) order by data_offerta desc';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'idu' => $id_user,
+                'search' => '%'.$search.'%'
+            ]
+        );
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
 }
