@@ -29,7 +29,7 @@
 <h3><?php echo $messaggio ?></h3>
 
 <?php if ($oggetti == null): ?>
-    <p>Non hai ancora comprato nessun oggetto</p>
+    <p>Non hai ancora comprato nessun oggetto...</p>
 <?php else: ?>
 <table class="table table-striped table-hover">
     <thead>

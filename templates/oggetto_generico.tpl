@@ -129,9 +129,11 @@ $this->layout('home', [
                             <strong><?php echo $offerente['nome'] ?>:</strong>
                         <?php endif; ?>
                         <?php $righe =   explode("\n", $messaggio['testo'] ); ?>
+                        <p>
                         <?php foreach ($righe as $riga): ?>
-                            <p><?php echo $riga ?></p>
+                            <?php echo $riga.'<br/>' ?>
                         <?php endforeach; ?>
+                        </p>
                     </div>
                 </div>
             <?php endforeach; ?>
