@@ -23,6 +23,15 @@ if (!isset($user['user_id'])){
 //ottengo l'id dell'utente e il suo nome
 $id_user = $user['user_id'];
 
+if(isset($_GET['search'])){
+    $search = $_GET['search'];
+    echo $template->render('index', [
+        'oggetti_disponibili' => TradeRepository::getOggettiDisponibiliRicerca($id_user,$search),
+        'utente' => TradeRepository::getUtente($id_user),
+        'messaggio' => 'Risultati della ricerca per "'.$search.'":'
+    ]);
+    exit(0);
+}
 
 //nel caso si voglia fare il logout
 if (isset($_GET['action'])){
@@ -39,5 +48,6 @@ if (isset($_GET['action'])){
 echo $template->render('index', [
     'oggetti_disponibili' => TradeRepository::getOggettiDisponibili($id_user),
     'utente' => TradeRepository::getUtente($id_user),
+    'messaggio' => 'Questi sono tutti gli oggetti disponibili'
 ]);
 

@@ -435,4 +435,18 @@ class TradeRepository{
         $rows = $stmt->fetchAll();
         return $rows;
     }
+
+    public static function getOggettiDisponibiliRicerca(int $id_user, string $search)
+    {
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT * FROM oggetti_disponibili WHERE id_utente != :idu and (nome like :search or descrizione like :search) order by data_offerta desc';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'idu' => $id_user,
+                'search' => '%'.$search.'%'
+            ]
+        );
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
 }
