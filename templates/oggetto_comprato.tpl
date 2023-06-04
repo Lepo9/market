@@ -16,9 +16,9 @@
     'vendita' => true,
     'comprati' => true,
     'search' => true,
-    'pagename' => 'index.php',
+    'pagename' => 'comprati.php',
     'sv' => '',
-    'mr' => 'Cerca oggetti in vendita'
+    'mr' => 'Cerca tra i comprati'
 ]);?>
 
 

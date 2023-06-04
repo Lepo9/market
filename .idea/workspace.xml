@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="Ricerca tra gli oggetti venduti">
-      <change beforePath="$PROJECT_DIR$/templates/oggetto.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oggetto.tpl" afterDir="false" />
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="Messaggio ersonalizzato per ogni pagina">
+      <change beforePath="$PROJECT_DIR$/templates/oggetto_comprato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oggetto_comprato.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +120,7 @@
       <workItem from="1685803218778" duration="621000" />
       <workItem from="1685803942509" duration="82000" />
       <workItem from="1685804043373" duration="14410000" />
-      <workItem from="1685893717474" duration="2305000" />
+      <workItem from="1685893717474" duration="2638000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -374,7 +374,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685895877867</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Ricerca in tutte le pagine">
+      <created>1685896112663</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1685896112663</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Messaggio ersonalizzato per ogni pagina">
+      <created>1685896315494</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1685896315494</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,8 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adattamento a link bottoni" />
-    <MESSAGE value="miei oggetti" />
     <MESSAGE value="commit" />
     <MESSAGE value="modifica del meccanismo navbar" />
     <MESSAGE value="aggiunta tasto per vendere un oggetto" />
@@ -459,7 +471,9 @@
     <MESSAGE value="funzione di ricerca nella home" />
     <MESSAGE value="Ricerca tra gli oggetti comprati" />
     <MESSAGE value="Ricerca tra gli oggetti venduti" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ricerca tra gli oggetti venduti" />
+    <MESSAGE value="Ricerca in tutte le pagine" />
+    <MESSAGE value="Messaggio ersonalizzato per ogni pagina" />
+    <option name="LAST_COMMIT_MESSAGE" value="Messaggio ersonalizzato per ogni pagina" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
