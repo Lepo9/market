@@ -11,6 +11,7 @@ $template = new Engine('templates','tpl');
 
 //Routing di tutte le pagine
 
+$ricerca = "";
 
 //Fa partire il processo di autenticazione
 $user = Authenticator::getUser();
@@ -25,12 +26,15 @@ $id_user = $user['user_id'];
 
 if(isset($_GET['search'])){
     $search = $_GET['search'];
-    echo $template->render('index', [
-        'oggetti_disponibili' => TradeRepository::getOggettiDisponibiliRicerca($id_user,$search),
-        'utente' => TradeRepository::getUtente($id_user),
-        'messaggio' => 'Risultati della ricerca per "'.$search.'":'
-    ]);
-    exit(0);
+    if($search!="") {
+        echo $template->render('index', [
+            'oggetti_disponibili' => TradeRepository::getOggettiDisponibiliRicerca($id_user, $search),
+            'utente' => TradeRepository::getUtente($id_user),
+            'messaggio' => 'Risultati della ricerca per "' . $search . '":',
+            'ricerca' => $search
+        ]);
+        exit(0);
+    }
 }
 
 //nel caso si voglia fare il logout
@@ -48,6 +52,7 @@ if (isset($_GET['action'])){
 echo $template->render('index', [
     'oggetti_disponibili' => TradeRepository::getOggettiDisponibili($id_user),
     'utente' => TradeRepository::getUtente($id_user),
-    'messaggio' => 'Questi sono tutti gli oggetti disponibili'
+    'messaggio' => 'Questi sono tutti gli oggetti disponibili',
+    'ricerca' => $ricerca
 ]);
 

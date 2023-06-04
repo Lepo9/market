@@ -4,6 +4,7 @@
  * @var $oggetti_disponibili
  * @var $utente
  * @var $messaggio
+ * @var $ricerca
  */
 ?>
 
@@ -13,7 +14,10 @@
         'oggetti' => true,
         'logout' => true,
         'vendita' => true,
-        'comprati' => true
+        'comprati' => true,
+        'search' => true,
+        'pagename' => 'index.php',
+        'sv' => $ricerca
 ]);?>
 
 <h4>Benvenut* <?php echo $utente['nome'] ?></h4>
