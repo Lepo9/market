@@ -14,7 +14,11 @@
     'oggetti' => true,
     'logout' => true,
     'vendita' => true,
-    'comprati' => true
+    'comprati' => true,
+    'search' => true,
+    'pagename' => 'comprati.php',
+    'sv' => '',
+    'mr' => 'Cerca tra i comprati'
 ]);?>
 
 

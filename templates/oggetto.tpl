@@ -14,7 +14,11 @@
     'oggetti' => true,
     'logout' => true,
     'vendita' => true,
-    'comprati' => true
+    'comprati' => true,
+    'search' => true,
+    'pagename' => 'miei_oggetti.php',
+    'sv' => '',
+    'mr' => 'Cerca tra i tuoi oggetti'
 ]);?>
 
 <?php if($utente['id'] != $oggetto['id_offerente']): ?>

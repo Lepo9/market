@@ -12,6 +12,7 @@
     'logout' => false,
     'vendita' => false,
     'comprati' => false,
+    'search' => false,
 ]);?>
 
 <h1>Login</h1>

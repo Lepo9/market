@@ -8,6 +8,10 @@
  * @var $logout
  * @var $vendita
  * @var $comprati
+ * @var $search
+ * @var $pagename
+ * @var $sv
+ * @var $mr
  */
 ?>
 <html lang="it">
@@ -44,6 +48,17 @@
         <?php if($comprati):?>
             <section class="navbar-center">
                 <a href="./comprati.php"><button class="btn m-2">Oggetti comprati</button></a>
+            </section>
+        <?php endif;?>
+
+        <?php if($search):?>
+            <section class="navbar-center mt-2">
+                <form method="get" action="./<?=$pagename?>" class="mt-2">
+                    <div class="input-group input-inline">
+                        <input class="form-input input" type="text" name="search" placeholder="<?= $mr?>" value="<?= $sv ?>">
+                        <button class="btn btn-primary btn input-group-btn">Search</button>
+                    </div>
+                </form>
             </section>
         <?php endif;?>
 

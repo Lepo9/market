@@ -20,8 +20,27 @@ if (!isset($user['user_id'])) {
 }
 $id_user = $user['user_id'];
 
+$ricerca = "";
+
+if (isset($_GET['search'])) {
+    $search = $_GET['search'];
+    if ($search != "") {
+        echo $template->render('miei_oggetti', [
+            'oggetti' => TradeRepository::getMieiOggettiRicerca($id_user, $search),
+            'utente' => TradeRepository::getUtente($id_user),
+            'messaggio' => 'Risultati della ricerca per "' . $search . '" tra i tuoi oggetti venduti:',
+            'ricerca' => $search
+        ]);
+        exit(0);
+    }
+}
+
+
+
 echo $template->render('miei_oggetti',[
     'oggetti' => TradeRepository::getMieiOggetti($id_user),
-    'utente' => TradeRepository::getUtente($id_user)
+    'utente' => TradeRepository::getUtente($id_user),
+    'messaggio' => 'Questi sono tutti gli oggetti che hai messo in vendita',
+    'ricerca' => $ricerca
 ]);
 
