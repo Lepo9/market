@@ -15,7 +15,10 @@
     'oggetti' => true,
     'logout' => true,
     'vendita' => true,
-    'comprati' => true
+    'comprati' => true,
+    'search' => true,
+    'pagename' => 'index.php',
+    'sv' => '',
 ]);?>
 
 
