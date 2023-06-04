@@ -8,21 +8,38 @@
  */
 ?>
 
-<?php $this->layout('home', [
+
+
+
+<?php
+$login = true;
+$logout = false;
+if($utente != null){
+    $login = false;
+    $logout = true;
+}
+
+$this->layout('home', [
         'titolo' => 'Market',
         'home' => false,
         'oggetti' => true,
-        'logout' => true,
+        'logout' => $logout,
         'vendita' => true,
         'comprati' => true,
         'search' => true,
         'pagename' => 'index.php',
         'sv' => $ricerca,
-        'mr' => 'Cerca oggetti in vendita'
+        'mr' => 'Cerca oggetti in vendita',
+        'login' => $login
 ]);?>
 
+<?php if($utente == null): ?>
+    <h3>Benvenut*</h3>
+    <p>Per poter accedere a tutte le funzionalità del sito è necessario registrarsi o effettuare il login</p>
+<?php else: ?>
 <h4>Benvenut* <?php echo $utente['nome'] ?></h4>
 <p>Il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
+<?php endif; ?>
 
 <div class="divider"></div>
 <h3><?php echo $messaggio ?></h3>

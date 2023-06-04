@@ -12,6 +12,7 @@
  * @var $pagename
  * @var $sv
  * @var $mr
+ * @var $login
  */
 ?>
 <html lang="it">
@@ -65,6 +66,12 @@
         <?php if($logout):?>
             <section class="navbar-center">
                 <a href="./?action=logout"><button class="btn m-2 btn-error">Logout</button></a>
+            </section>
+        <?php endif;?>
+
+        <?php if($login):?>
+            <section class="navbar-center">
+                <a href="./login.php"><button class="btn m-2">Login</button></a>
             </section>
         <?php endif;?>
 
