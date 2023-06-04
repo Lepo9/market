@@ -8,12 +8,13 @@
 
 <?php $this->layout('home', [
     'titolo' => 'Login',
-    'home' => false,
+    'home' => true,
     'oggetti' => false,
     'logout' => false,
     'vendita' => false,
     'comprati' => false,
     'search' => false,
+    'login' => false
 ]);?>
 
 

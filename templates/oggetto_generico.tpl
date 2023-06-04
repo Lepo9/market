@@ -9,13 +9,24 @@
  */
 ?>
 
-<?php $this->layout('home', [
+<?php
+
+$login = true;
+$logout = false;
+if($utente != null){
+    $login = false;
+    $logout = true;
+}
+
+$this->layout('home', [
     'titolo' => 'Oggetto',
     'home' => true,
-    'oggetti' => true,
-    'logout' => true,
-    'vendita' => true,
-    'comprati' => true,
+    'oggetti' => $logout,
+    'logout' => $logout,
+    'vendita' => $logout,
+    'comprati' => $logout,
+    'logout' => $logout,
+    'login' => $login,
     'search' => true,
     'pagename' => 'index.php',
     'sv' => '',
@@ -23,9 +34,18 @@
 ]);?>
 
 
+<?php if ($utente == null): ?>
+    <div class="columns">
+        <div class="column col-6 col-mx-auto">
+            <i>Per contattare il venditore o comprare l'oggetto, devi prima effettuare il <a href="./login.php">login</a>.</i>
+            <p>Oggetto venduto da <?php echo $offerente['nome'] ?></p>
+        </div>
+    </div>
+<?php endif; ?>
 
 <div class="columns">
-    <div class="column">
+    <div class="column col-6 col-mx-auto">
+
         <h1><?php echo $oggetto['nome'] ?></h1>
             <?php if ($oggetto['immagine'] != null): ?>
                 <img src="<?php echo $oggetto['immagine'] ?>" alt="immagine dell'oggetto" class="img-responsive">
@@ -33,8 +53,10 @@
         <h3 class="mt-2">Categoria: <?php echo $oggetto['categoria']?></h3>
         <p>L'oggetto è in vendita da <?php echo $oggetto['data_offerta'] ?></p>
     </div>
+    <?php if ($utente != null): ?>
     <div class="divider-vert"></div>
     <div class="column">
+
         <p><?= $utente['nome'] ?>, il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
         <?php if ($canBuy): ?>
             <form class="form-horizontal" action="./action.php" method="post">
@@ -69,44 +91,53 @@
             <p>Vendi dei prodotti per acquistarne altri</p>
         <?php endif; ?>
     </div>
+    <?php endif; ?>
 </div>
+
 
 <div class="divider mt-4"></div>
 
+<div class="columns">
+    <div class="column col-8 col-mx-auto">
+    <?php if ($oggetto['descrizione'] != null): ?>
+        <?php $righe =   explode("\n", $oggetto['descrizione'] ); ?>
+        <h4>Descrizione</h4>
+        <?php foreach ($righe as $riga): ?>
+            <p><?php echo $riga ?></p>
+        <?php endforeach; ?>
+    <?php endif; ?>
 
-<?php if ($oggetto['descrizione'] != null): ?>
-    <?php $righe =   explode("\n", $oggetto['descrizione'] ); ?>
-    <h4>Descrizione</h4>
-    <?php foreach ($righe as $riga): ?>
-        <p><?php echo $riga ?></p>
-    <?php endforeach; ?>
-<?php endif; ?>
+    <?php if ($utente != null): ?>
+        <div class="divider"></div>
 
-<div class="divider"></div>
+        <h5>Messaggi recenti</h5>
+        <?php if ($messaggi == null): ?>
+            <p>Non ci sono messaggi...</p>
+        <?php else: ?>
+            <?php foreach ($messaggi as $messaggio): ?>
+                <div class="columns">
+                    <div class="column col-3">
+                        <p><?php echo $messaggio['data'] ?></p>
 
-<h5>Messaggi recenti</h5>
-<?php if ($messaggi == null): ?>
-    <p>Non ci sono messaggi...</p>
-<?php else: ?>
-    <?php foreach ($messaggi as $messaggio): ?>
-        <div class="columns">
-            <div class="column col-3">
-                <p><?php echo $messaggio['data'] ?></p>
+                    </div>
+                    <div class="divider-vert"></div>
+                    <div class="column">
 
-            </div>
-            <div class="divider-vert"></div>
-            <div class="column">
+                        <?php if ($messaggio['id_mittente'] == $utente['id']): ?>
+                            <strong>Tu:</strong>
+                        <?php else: ?>
+                            <strong><?php echo $offerente['nome'] ?>:</strong>
+                        <?php endif; ?>
+                        <?php $righe =   explode("\n", $messaggio['testo'] ); ?>
+                        <?php foreach ($righe as $riga): ?>
+                            <p><?php echo $riga ?></p>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    <?php endif; ?>
+    </div>
+</div>
 
-                <?php if ($messaggio['id_mittente'] == $utente['id']): ?>
-                    <strong>Tu:</strong>
-                <?php else: ?>
-                    <strong><?php echo $offerente['nome'] ?>:</strong>
-                <?php endif; ?>
-                <?php $righe =   explode("\n", $messaggio['testo'] ); ?>
-                <?php foreach ($righe as $riga): ?>
-                    <p><?php echo $riga ?></p>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    <?php endforeach; ?>
-<?php endif; ?>
+

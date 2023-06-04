@@ -44,7 +44,7 @@ if($action == 'registrazione'){
 
     $esito = UserRepository::newUtente($nome, $cognome, $email, $password1);
     var_dump($esito);
-    header('Location: index.php');
+    header('Location: login.php');
     exit(0);
 }
 

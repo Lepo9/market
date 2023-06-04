@@ -129,6 +129,8 @@ class TradeRepository{
                 'id' => $id,
             ]
         );
+        if ($stmt->rowCount() == 0)
+            return [];
         $row = $stmt->fetch();
         return $row;
     }
@@ -495,5 +497,26 @@ class TradeRepository{
         }
     }
 
+    public static function oggettiDisponibiliRicerca(string $search)
+    {
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT * FROM oggetti_disponibili WHERE (nome like :search) order by data_offerta desc';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'search' => '%'.$search.'%'
+            ]
+        );
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
+
+    public static function oggettiDisponibili()
+    {
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT * FROM oggetti_disponibili order by data_offerta desc';
+        $stmt = $pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
 
 }
