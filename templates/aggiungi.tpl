@@ -16,7 +16,8 @@
     'oggetti' => true,
     'logout' => true,
     'vendita' => false,
-    'comprati' => true
+    'comprati' => true,
+    'search' => false,
 ]);?>
 
 <h1>Aggiungi un oggetto</h1>

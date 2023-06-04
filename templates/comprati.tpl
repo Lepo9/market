@@ -3,6 +3,8 @@
  * Questo commento serve solo a eliminare l'indicazione di errore
  * @var $oggetti
  * @var $utente
+ * @var $ricerca
+ * @var $messaggio
  */
 ?>
 
@@ -13,15 +15,19 @@
     'logout' => true,
     'vendita' => true,
     'comprati' => false,
+    'search' => true,
+    'pagename' => 'comprati.php',
+    'sv' => $ricerca
+
 ]);
 ?>
 
 <h4>Benvenut* <?php echo $utente['nome'] ?></h4>
 
 <div class="divider"></div>
-<h3>Questi sono gli oggetti che hai comprato</h3>
+<h3><?php echo $messaggio ?></h3>
 
-<?php if (count($oggetti) == 0): ?>
+<?php if ($oggetti == null): ?>
     <p>Non hai ancora comprato nessun oggetto</p>
 <?php else: ?>
 <table class="table table-striped table-hover">

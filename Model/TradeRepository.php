@@ -449,4 +449,18 @@ class TradeRepository{
         $rows = $stmt->fetchAll();
         return $rows;
     }
+
+    public static function getCompratiRicerca(int $id_user, string $search)
+    {
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT oggetto.id as id, nome, oggetto.descrizione as descrizione, id_offerente, id_richiedente, immagine,  data_offerta, data_scambio, categoria.descrizione as categoria FROM oggetto, categoria WHERE categoria.id = id_categoria and id_richiedente = :idu and (nome like :search) order by data_offerta desc';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'idu' => $id_user,
+                'search' => '%'.$search.'%'
+            ]
+        );
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
 }
