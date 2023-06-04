@@ -129,6 +129,8 @@ class TradeRepository{
                 'id' => $id,
             ]
         );
+        if ($stmt->rowCount() == 0)
+            return [];
         $row = $stmt->fetch();
         return $row;
     }

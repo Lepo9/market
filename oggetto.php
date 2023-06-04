@@ -10,15 +10,6 @@ use Util\Authenticator;
 
 $template = new Engine('templates','tpl');
 
-
-$user = Authenticator::getUser();
-if (!isset($user['user_id'])){
-    $login_fallito = $user;
-    header('Location: index.php');
-    exit(0);
-}
-
-
 //recupero dalla get id_oggetto
 $id_oggetto = $_GET['id_oggetto'];
 // se non è settato, reinderizzo alla home
@@ -37,11 +28,29 @@ if (!$oggetto || $oggetto['data_scambio'] != null){
 
 
 
-echo $template->render('oggetto_generico',[
-    'oggetto' => $oggetto,
-    'offerente' => TradeRepository::getUtente($oggetto['id_offerente']),
-    'utente' => TradeRepository::getUtente($user['user_id']),
-    'canBuy' => TradeRepository::canBuy($user['user_id']),
-    'messaggi' => TradeRepository::getMessaggi($id_oggetto)
-]);
+$user = Authenticator::getUser();
+if (!isset($user['user_id'])){
+    //utente non loggato
+    echo $template->render('oggetto_generico',[
+        'oggetto' => $oggetto,
+        'offerente' => TradeRepository::getUtente($oggetto['id_offerente']),
+        'utente' => null,
+    ]);
+}
+else{
+    echo $template->render('oggetto_generico',[
+        'oggetto' => $oggetto,
+        'offerente' => TradeRepository::getUtente($oggetto['id_offerente']),
+        'utente' => TradeRepository::getUtente($user['user_id']),
+        'canBuy' => TradeRepository::canBuy($user['user_id']),
+        'messaggi' => TradeRepository::getMessaggi($id_oggetto)
+    ]);
+}
+
+
+
+
+
+
+
 

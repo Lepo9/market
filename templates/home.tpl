@@ -14,6 +14,9 @@
  * @var $mr
  * @var $login
  */
+
+if (!isset($login)) $login = false;
+
 ?>
 <html lang="it">
 <head>

@@ -22,10 +22,10 @@ if($utente != null){
 $this->layout('home', [
         'titolo' => 'Market',
         'home' => false,
-        'oggetti' => true,
+        'oggetti' => $logout,
         'logout' => $logout,
-        'vendita' => true,
-        'comprati' => true,
+        'vendita' => $logout,
+        'comprati' => $logout,
         'search' => true,
         'pagename' => 'index.php',
         'sv' => $ricerca,
