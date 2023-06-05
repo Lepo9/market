@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="Correzione di tutti gli errori e warnings">
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="Pagina index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,7 @@
       <workItem from="1685803942509" duration="82000" />
       <workItem from="1685804043373" duration="14410000" />
       <workItem from="1685893717474" duration="2638000" />
-      <workItem from="1685978023584" duration="4550000" />
+      <workItem from="1685978023584" duration="6356000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -429,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685904952712</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Pagina index">
+      <created>1685983825694</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1685983825694</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dimensioni dell'immagini corrette" />
     <MESSAGE value="presentazione corretta delle immagini" />
     <MESSAGE value="presentazione delle righe della descrizione" />
     <MESSAGE value="errori e mantenimento dei campi" />
@@ -514,7 +520,8 @@
     <MESSAGE value="index adeguata al login" />
     <MESSAGE value="Sistemazione delle righe della chat" />
     <MESSAGE value="Correzione di tutti gli errori e warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correzione di tutti gli errori e warnings" />
+    <MESSAGE value="Pagina index" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pagina index" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

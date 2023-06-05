@@ -33,7 +33,7 @@ if (!isset($login)) $login = false;
     <div class="navbar-start">
     </div>
     <div class="navbar-center">
-        <div class="tabs">
+        <div class="tabs tabs-boxed">
         <?php if($home):?>
                 <a href="." class="tab tab-lg tab-lifted <?php if($corrente == 'Home') echo 'tab-active'?>">Home</a>
         <?php endif;?>
