@@ -21,7 +21,7 @@ if($utente != null){
 
 $this->layout('home', [
         'titolo' => 'Market',
-        'home' => false,
+        'home' => true,
         'oggetti' => $logout,
         'logout' => $logout,
         'vendita' => $logout,
@@ -30,49 +30,53 @@ $this->layout('home', [
         'pagename' => 'index.php',
         'sv' => $ricerca,
         'mr' => 'Cerca oggetti in vendita',
-        'login' => $login
+        'login' => $login,
+        'corrente' => 'Home'
 ]);?>
 
 <?php if($utente == null): ?>
-    <h3>Benvenut*</h3>
-    <p>Per poter accedere a tutte le funzionalità del sito è necessario registrarsi o effettuare il login</p>
+    <h1 class="text-5xl font-bold text-center">Benvenut*</h1>
+    <p class="max-w-screen-xl text-center">Per poter utilizzare il sito devi prima effettuare il <!--suppress HtmlUnknownTarget -->
+        <a href="./login.php">login</a> o <!--suppress HtmlUnknownTarget -->
+        <a href="./registrazione.php">registrarti</a></p>
 <?php else: ?>
-<h4>Benvenut* <?php echo $utente['nome'] ?></h4>
-<p>Il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
+<h1 class="text-5xl font-bold text-center">Benvenut* <?php echo $utente['nome'] ?></h1>
+<p class="text-center">Il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</p>
 <?php endif; ?>
 
 <div class="divider"></div>
-<h3><?php echo $messaggio ?></h3>
+<h1 class="text-3xl font-bold mb-4 text-center"><?php echo $messaggio ?></h1>
 
 <?php if($oggetti_disponibili == null): ?>
     <p>Non ci sono oggetti disponibili</p>
 <?php else: ?>
-<table class="table table-striped table-hover">
-    <thead>
-    <tr>
-        <th>Nome</th>
-        <th>Categoria</th>
-        <th>Data dell'offerta</th>
-        <th>Offerente</th>
-        <th>Contatta il venditore</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($oggetti_disponibili as $oggetto): ?>
-        <tr>
-            <td><?php echo $oggetto['nome'] ?></td>
-            <td><?php echo $oggetto['categoria'] ?></td>
-            <td><?php echo $oggetto['data_offerta'] ?></td>
-            <td><?php echo $oggetto['nomeu']." ".$oggetto["cognomeu"] ?></td>
-            <td>
-                <!--suppress HtmlUnknownTarget -->
-                <form method="get" action="./oggetto.php">
-                    <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
-                    <button class="btn btn-sm"><i class="icon icon-message"></i></button>
-                </form>
-            </td>
-        </tr>
-    <?php endforeach; ?>
-    </tbody>
-</table>
+
+        <table class="table table-zebra table-lg">
+            <thead>
+            <tr>
+                <th class="text-xl text-center">Nome</th>
+                <th class="text-xl text-center">Categoria</th>
+                <th class="text-xl text-center">Data dell'offerta</th>
+                <th class="text-xl text-center">Contatta il venditore</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($oggetti_disponibili as $oggetto): ?>
+                <tr class="hover">
+                    <td class="text-center"><?php echo $oggetto['nome'] ?></td>
+                    <td class="text-center"><?php echo $oggetto['categoria'] ?></td>
+                    <td class="text-center"><?php echo $oggetto['data_offerta'] ?></td>
+                    <td class="text-center">
+                        <!--suppress HtmlUnknownTarget -->
+                        <form method="get" action="./oggetto.php">
+                            <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
+                            <button class="btn btn-sm"><?php echo $oggetto['nomeu']." ".$oggetto["cognomeu"] ?></i></button>
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+
+
 <?php endif; ?>
