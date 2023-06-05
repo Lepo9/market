@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="oggetti comprati">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/aggiungi.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aggiungi.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registrazione.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registrazione.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendita.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendita.php" afterDir="false" />
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="vendita di un oggetto">
+      <change beforePath="$PROJECT_DIR$/templates/home.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +125,7 @@
       <workItem from="1685803942509" duration="82000" />
       <workItem from="1685804043373" duration="14410000" />
       <workItem from="1685893717474" duration="2638000" />
-      <workItem from="1685978023584" duration="11081000" />
+      <workItem from="1685978023584" duration="11390000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -466,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685990715727</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="vendita di un oggetto">
+      <created>1685992243090</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1685992243090</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="viene anche eliminata l'immagine dalla memoria" />
     <MESSAGE value="tasto elimina dinamico" />
     <MESSAGE value="prima parte della modifica dove i pezzi di codice vengono re_inseriti" />
     <MESSAGE value="modifica completata correttamente" />
@@ -551,7 +554,8 @@
     <MESSAGE value="registrazione, correzione bugs" />
     <MESSAGE value="i miei oggetti in vendita" />
     <MESSAGE value="oggetti comprati" />
-    <option name="LAST_COMMIT_MESSAGE" value="oggetti comprati" />
+    <MESSAGE value="vendita di un oggetto" />
+    <option name="LAST_COMMIT_MESSAGE" value="vendita di un oggetto" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

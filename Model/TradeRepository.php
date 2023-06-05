@@ -310,7 +310,7 @@ class TradeRepository{
     public static function getMieiOggetti(int $id_user): bool|array
     {
         $pdo = Connection::getInstance();
-        $sql = 'SELECT * FROM ogg_off WHERE id_offerente = :idu order by data_offerta desc';
+        $sql = 'SELECT * FROM ogg_off WHERE id_offerente = :idu order by data_scambio asc, data_offerta desc';
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
                 'idu' => $id_user

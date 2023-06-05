@@ -19,7 +19,7 @@
 if (!isset($login)) $login = false;
 
 ?>
-<html lang="it">
+<html lang="it" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <!--suppress JSUnresolvedLibraryURL -->
