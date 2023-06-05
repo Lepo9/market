@@ -43,15 +43,15 @@ if (!isset($login)) $login = false;
                 <a href="./miei_oggetti.php" class="tab tab-lg tab-lifted <?php if($corrente == 'I miei oggetti in vendita') echo 'tab-active'?>">I miei oggetti in vendita</a>
         <?php endif;?>
 
-        <?php if($vendita):?>
-                <!--suppress HtmlUnknownTarget -->
-                <a href="./vendita.php" class="tab tab-lg tab-lifted <?php if($corrente == 'Vendi un oggetto') echo 'tab-active'?>">Vendi un oggetto</a>
-        <?php endif;?>
-
         <?php if($comprati):?>
                 <!--suppress HtmlUnknownTarget -->
                 <a href="./comprati.php" class="tab tab-lg tab-lifted <?php if($corrente == 'Oggetti comprati') echo 'tab-active'?>">Oggetti comprati</a>
         <?php endif;?>
+
+            <?php if($vendita):?>
+                <!--suppress HtmlUnknownTarget -->
+                <a href="./vendita.php" class="tab tab-lg tab-lifted <?php if($corrente == 'Vendi un oggetto') echo 'tab-active'?>">Vendi un oggetto</a>
+            <?php endif;?>
         </div>
     </div>
     <div class="navbar-end">

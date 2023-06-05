@@ -70,13 +70,14 @@ $this->layout('home', [
                         <!--suppress HtmlUnknownTarget -->
                         <form method="get" action="./oggetto.php">
                             <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
-                            <button class="btn btn-sm"><?php echo $oggetto['nomeu']." ".$oggetto["cognomeu"] ?></i></button>
+                            <button tabindex="0" class="btn btn-ghost mt-4">
+                                <!--suppress HtmlUnknownTarget -->
+                                <img src="./icons/chat_ico.svg"  alt=""/><?php echo $oggetto['nomeu']." ".$oggetto["cognomeu"] ?>
+                            </button>
                         </form>
                     </td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
         </table>
-
-
 <?php endif; ?>
