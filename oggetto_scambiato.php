@@ -42,6 +42,6 @@ echo $template->render('oggetto_comprato',[
     'oggetto' => $oggetto,
     'offerente' => TradeRepository::getUtente($oggetto['id_offerente']),
     'utente' => TradeRepository::getUtente($user['user_id']),
-    'messaggi' => TradeRepository::getMessaggi($id_oggetto)
+    'messaggi' => TradeRepository::getMessaggiDiUnUtente($id_oggetto, $id_user)
 ]);
 

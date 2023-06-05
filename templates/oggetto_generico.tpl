@@ -85,7 +85,9 @@ $this->layout('home', [
 
     <?php if ($utente != null): ?>
     <div class="divider divider-horizontal"></div>
-    <div class="flex flex-col">
+
+
+    <div class="flex flex-col max-w-lg min-w-min">
 
             <h1 class="text-4xl"><?= $utente['nome'] ?>, il tuo saldo è di <?php echo $utente['gettoni'] ?> gettoni</h1>
             <?php if ($canBuy): ?>

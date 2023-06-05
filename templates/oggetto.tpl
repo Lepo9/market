@@ -57,7 +57,7 @@
 
 
     <div class="divider divider-horizontal"></div>
-    <div class="flex flex-col max-w-lg">
+    <div class="flex flex-col max-w-lg min-w-min">
 
     <h1 class="text-3xl">Questi sono i messaggi che i vari utenti ti hanno scritto</h1>
 
