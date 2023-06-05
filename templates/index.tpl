@@ -57,7 +57,7 @@ $this->layout('home', [
                 <th class="text-xl text-center">Nome</th>
                 <th class="text-xl text-center">Categoria</th>
                 <th class="text-xl text-center">Data dell'offerta</th>
-                <th class="text-xl text-center">Contatta il venditore</th>
+                <th class="text-xl text-center">Guarda l'oggetto di</th>
             </tr>
             </thead>
             <tbody>

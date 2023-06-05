@@ -34,13 +34,13 @@
     <table class="table table-zebra table-lg">
     <thead>
     <tr>
-        <th>Nome</th>
-        <th>Categoria</th>
-        <th>Data dell'offerta</th>
-        <th>Stato</th>
-        <th>Visualizza</th>
-        <th>Modifica</th>
-        <th>Elimina</th>
+        <th class="text-xl text-center">Nome</th>
+        <th class="text-xl text-center">Categoria</th>
+        <th class="text-xl text-center">Data dell'offerta</th>
+        <th class="text-xl text-center">Stato</th>
+        <th class="text-xl text-center">Visualizza</th>
+        <th class="text-xl text-center">Modifica</th>
+        <th class="text-xl text-center">Elimina</th>
     </tr>
     </thead>
     <tbody>
@@ -60,7 +60,7 @@
                 <!--suppress HtmlUnknownTarget -->
                 <form method="get" action="./mio_oggetto.php" class="text-center">
                     <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
-                    <label tabindex="0" class="btn btn-ghost btn-square">
+                    <label tabindex="0" class="btn btn-ghost btn-square mt-4">
                         <button class="w-10">
                             <!--suppress HtmlUnknownTarget -->
                             <img src="./icons/chat_ico.svg" alt=""/>
@@ -73,7 +73,7 @@
                     <!--suppress HtmlUnknownTarget -->
                     <form method="post" action="./vendita.php" class="text-center">
                         <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
-                        <label tabindex="0" class="btn btn-ghost btn-square">
+                        <label tabindex="0" class="btn btn-ghost btn-square mt-4">
                             <button class="w-10">
                                 <!--suppress HtmlRequiredAltAttribute, HtmlUnknownTarget -->
                                 <img src="./icons/edit_ico.svg" />
@@ -86,7 +86,7 @@
                     <form method="post" action="./action.php" class="text-center">
                         <input type="hidden" name="action" value="elimina_oggetto">
                         <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id_oggetto'] ?>">
-                        <label tabindex="0" class="btn btn-ghost btn-square">
+                        <label tabindex="0" class="btn btn-ghost btn-square mt-4">
                             <button class="w-10">
                                 <!--suppress HtmlUnknownTarget -->
                                 <img src="./icons/delete_ico.svg"  alt=""/>
