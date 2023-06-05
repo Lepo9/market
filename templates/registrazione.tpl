@@ -26,7 +26,6 @@
         <span><?php echo $errore ?></span>
     </div>
 </div>
-
 <?php endif; ?>
 
 

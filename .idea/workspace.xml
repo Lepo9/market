@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="i miei oggetti in vendita">
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="oggetti comprati">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/comprati.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/comprati.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/miei_oggetti.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/miei_oggetti.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/aggiungi.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aggiungi.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registrazione.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registrazione.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendita.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendita.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,11 +82,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\icons" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\img" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\templates" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\conf" />
-      <recent name="C:\Users\77097428\PhpstormProjects\market\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\icons" />
@@ -128,7 +128,7 @@
       <workItem from="1685803942509" duration="82000" />
       <workItem from="1685804043373" duration="14410000" />
       <workItem from="1685893717474" duration="2638000" />
-      <workItem from="1685978023584" duration="9795000" />
+      <workItem from="1685978023584" duration="11081000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1684824103839</created>
@@ -459,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685990100237</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="oggetti comprati">
+      <created>1685990715727</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1685990715727</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +526,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="possibilità di eliminare un oggetto" />
     <MESSAGE value="viene anche eliminata l'immagine dalla memoria" />
     <MESSAGE value="tasto elimina dinamico" />
     <MESSAGE value="prima parte della modifica dove i pezzi di codice vengono re_inseriti" />
@@ -544,7 +550,8 @@
     <MESSAGE value="login, sistemazione navbar, sistemazione bug login" />
     <MESSAGE value="registrazione, correzione bugs" />
     <MESSAGE value="i miei oggetti in vendita" />
-    <option name="LAST_COMMIT_MESSAGE" value="i miei oggetti in vendita" />
+    <MESSAGE value="oggetti comprati" />
+    <option name="LAST_COMMIT_MESSAGE" value="oggetti comprati" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
