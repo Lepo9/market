@@ -56,7 +56,7 @@ if (!isset($login)) $login = false;
     </div>
     <div class="navbar-end">
         <?php if($search):?>
-        <form method="get" action="./<?=$pagename?>" class="mt-4">
+        <form method="get" action="./<?=$pagename?>" class="mt-4  ml-4">
             <div class="join">
                 <!--suppress HtmlFormInputWithoutLabel -->
                 <input class="input join-item" type="text" name="search" placeholder="<?= $mr?>" value="<?= $sv ?>"/>

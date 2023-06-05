@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="ordinamento degli oggetti venduti">
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="oggetto generico">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TradeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TradeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/oggetto_generico.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oggetto_generico.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/oggetto.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oggetto.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Documents/ScuolaSuperiore/Triennio/Informatica/php/market/icons",
+    "last_opened_file_path": "D:/Documents/ScuolaSuperiore/Triennio/Informatica/php/market/templates",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -81,10 +81,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\templates" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\icons" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\img" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
-      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\templates" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\conf" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -127,14 +127,7 @@
       <workItem from="1685803942509" duration="82000" />
       <workItem from="1685804043373" duration="14410000" />
       <workItem from="1685893717474" duration="2638000" />
-      <workItem from="1685978023584" duration="14706000" />
-    </task>
-    <task id="LOCAL-00002" summary="commit">
-      <created>1684824144272</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1684824144272</updated>
+      <workItem from="1685978023584" duration="17831000" />
     </task>
     <task id="LOCAL-00003" summary="commit">
       <created>1684824316041</created>
@@ -472,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685992479339</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="oggetto generico">
+      <created>1685996463061</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1685996463061</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +532,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="prima parte della modifica dove i pezzi di codice vengono re_inseriti" />
     <MESSAGE value="modifica completata correttamente" />
     <MESSAGE value="visualizzata la lista di quelli scambiati" />
     <MESSAGE value="visualizza l'oggetto che è stato scambiato" />
@@ -557,7 +556,8 @@
     <MESSAGE value="oggetti comprati" />
     <MESSAGE value="vendita di un oggetto" />
     <MESSAGE value="ordinamento degli oggetti venduti" />
-    <option name="LAST_COMMIT_MESSAGE" value="ordinamento degli oggetti venduti" />
+    <MESSAGE value="oggetto generico" />
+    <option name="LAST_COMMIT_MESSAGE" value="oggetto generico" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

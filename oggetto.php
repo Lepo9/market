@@ -43,7 +43,7 @@ else{
         'offerente' => TradeRepository::getUtente($oggetto['id_offerente']),
         'utente' => TradeRepository::getUtente($user['user_id']),
         'canBuy' => TradeRepository::canBuy($user['user_id']),
-        'messaggi' => TradeRepository::getMessaggi($id_oggetto)
+        'messaggi' => TradeRepository::getMessaggiDiUnUtente($id_oggetto,$user['user_id'])
     ]);
 }
 

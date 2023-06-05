@@ -445,4 +445,18 @@ class TradeRepository{
         return $stmt->fetchAll();
     }
 
+    public static function getMessaggiDiUnUtente(int $id_oggetto, int $user_id)
+    {
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT * FROM messaggio WHERE id_oggetto = :id_oggetto AND (id_mittente = :id_user OR id_destinatario = :id_user) ORDER BY data ASC';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'id_oggetto' => $id_oggetto,
+                'id_user' => $user_id
+            ]
+        );
+        return $stmt->fetchAll();
+    }
+
+
 }
