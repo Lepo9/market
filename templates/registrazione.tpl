@@ -80,7 +80,7 @@
                         <input type="password" placeholder="password" class="input input-bordered" name="password2" required/>
                     </div>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary">Registrati</button>
+                        <button class="btn btn-accent">Registrati</button>
                     </div>
                 </div>
             </div>

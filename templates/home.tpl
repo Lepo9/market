@@ -31,6 +31,9 @@ if (!isset($login)) $login = false;
 
 <div class="navbar bg-neutral mb-8 sticky top-0 z-50">
     <div class="navbar-start">
+        <div class="tabs tabs-boxed">
+        <a href=".." class="tab tab-lg tab-lifted">Main menù</a>
+        </div>
     </div>
     <div class="navbar-center">
         <div class="tabs tabs-boxed">
@@ -72,7 +75,7 @@ if (!isset($login)) $login = false;
 
         <?php if($login):?>
                 <!--suppress HtmlUnknownTarget -->
-                <a href="./login.php"><button class="btn m-2">Login</button></a>
+                <a href="./login.php"><button class="btn btn-accent m-2">Login</button></a>
         <?php endif;?>
 
     </div>

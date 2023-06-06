@@ -58,7 +58,7 @@
                         <input type="password" placeholder="password" class="input input-bordered" name="password" required/>
                     </div>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary">Login</button>
+                        <button class="btn btn-accent">Login</button>
                     </div>
 
 

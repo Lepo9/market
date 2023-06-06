@@ -107,7 +107,7 @@
 
 
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary">Carica l'oggetto!</button>
+                        <button class="btn btn-accent">Carica l'oggetto!</button>
                     </div>
                 </div>
             </div>
