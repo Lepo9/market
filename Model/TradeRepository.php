@@ -49,7 +49,7 @@ class TradeRepository{
             $percorsoDestinazione = $destination_path . $nuovoNome;
 
             // Dimensioni desiderate per l'immagine ridimensionata
-            $larghezzaDesiderata = 600;
+            $larghezzaDesiderata = 1024;
             // Ottieni le dimensioni dell'immagine originale
             list($larghezzaOriginale, $altezzaOriginale) = getimagesize($nomeTemporaneo);
 
@@ -310,7 +310,7 @@ class TradeRepository{
     public static function getMieiOggetti(int $id_user): bool|array
     {
         $pdo = Connection::getInstance();
-        $sql = 'SELECT * FROM ogg_off WHERE id_offerente = :idu order by data_offerta desc';
+        $sql = 'SELECT * FROM ogg_off WHERE id_offerente = :idu order by data_scambio asc, data_offerta desc';
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
                 'idu' => $id_user
@@ -444,5 +444,19 @@ class TradeRepository{
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll();
     }
+
+    public static function getMessaggiDiUnUtente(int $id_oggetto, int $user_id)
+    {
+        $pdo = Connection::getInstance();
+        $sql = 'SELECT * FROM messaggio WHERE id_oggetto = :id_oggetto AND (id_mittente = :id_user OR id_destinatario = :id_user) ORDER BY data ASC';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+                'id_oggetto' => $id_oggetto,
+                'id_user' => $user_id
+            ]
+        );
+        return $stmt->fetchAll();
+    }
+
 
 }

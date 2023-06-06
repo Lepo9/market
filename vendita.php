@@ -66,14 +66,13 @@ if(isset($_POST['id_oggetto_vecchio'])){
     exit(0);
 }
 
-if (isset($_POST['categoria'])) {
-
+if (isset($_POST['nome'])) {
     $nome = $_POST['nome'];
     $descrizione = null;
     if (isset($_POST['descrizione']))
         $descrizione = $_POST['descrizione'];
-    $categoria = $_POST['categoria'];
-    if($categoria == 0){
+
+    if(!isset($_POST['categoria'])){
         $errore = "Seleziona una categoria";
         $categorie = TradeRepository::getCategorie();
 
@@ -87,6 +86,7 @@ if (isset($_POST['categoria'])) {
         ]);
         exit(0);
     }
+    $categoria = $_POST['categoria'];
     $immagine = null;
     if (isset($_FILES['immagine'])){
         $immagine = $_FILES['immagine'];

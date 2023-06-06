@@ -23,61 +23,74 @@
 
 
 
-<div class="columns">
-    <div class="column">
-        <h1><?php echo $oggetto['nome'] ?></h1>
-            <?php if ($oggetto['immagine'] != null): ?>
-                <img src="<?php echo $oggetto['immagine'] ?>" alt="immagine dell'oggetto" class="img-responsive">
+<div class="flex w-full justify-center">
+
+    <div class="card w-1/2 bg-base-100 shadow-xl">
+        <?php if ($oggetto['immagine'] != null): ?>
+            <figure><img src="<?php echo $oggetto['immagine'] ?>" alt="immagine dell'oggetto" /></figure>
+        <?php endif; ?>
+        <div class="card-body">
+            <h1 class="card-title text-3xl font-bold"><?php echo $oggetto['nome'] ?></h1>
+            <h3 class="text-2xl"><strong>Categoria:</strong> <?php echo $oggetto['categoria']?></h3>
+            <p>L'oggetto era stato messo in vendita il <?php echo $oggetto['data_offerta'] ?></p>
+            <p>L'acquisto è avvenuto il <?php echo $oggetto['data_scambio'] ?></p>
+            <p><strong>Venditore:</strong> <?php echo $offerente['nome'] ?></p>
+            <div class="divider"></div>
+            <?php if ($oggetto['descrizione'] != null): ?>
+                <?php $righe =   explode("\n", $oggetto['descrizione'] ); ?>
+                <h3 class="text-2xl font-bold">Descrizione</strong></h3>
+                <?php foreach ($righe as $riga): ?>
+                    <p><?php echo $riga ?></p>
+                <?php endforeach; ?>
             <?php endif; ?>
 
-
-    </div>
-    <div class="divider-vert"></div>
-    <div class="column">
-        <h3 class="mt-2">Categoria: <?php echo $oggetto['categoria']?></h3>
-        <p><?php echo $offerente['nome'] ?> <?php echo $offerente['cognome'] ?> ti ha venduto l'oggetto</p>
-        <p>L'oggetto èra stato messo in vendita il <?php echo $oggetto['data_offerta'] ?></p>
-        <p>L'acquisto è avvenuto il <?php echo $oggetto['data_scambio'] ?></p>
-    </div>
-</div>
-
-<div class="divider mt-4"></div>
-
-<?php if ($oggetto['descrizione'] != null): ?>
-    <?php $righe =   explode("\n", $oggetto['descrizione'] ); ?>
-    <h4>Descrizione</h4>
-    <?php foreach ($righe as $riga): ?>
-        <p><?php echo $riga ?></p>
-    <?php endforeach; ?>
-<?php endif; ?>
-
-<div class="divider"></div>
-
-<h5>Messaggi recenti</h5>
-<?php if ($messaggi == null): ?>
-    <p>Non ci sono messaggi...</p>
-<?php else: ?>
-    <?php foreach ($messaggi as $messaggio): ?>
-        <div class="columns">
-            <div class="column col-3">
-                <p><?php echo $messaggio['data'] ?></p>
-
-            </div>
-            <div class="divider-vert"></div>
-            <div class="column">
-
-                <?php if ($messaggio['id_mittente'] == $utente['id']): ?>
-                    <strong>Tu:</strong>
-                <?php else: ?>
-                    <strong><?php echo $offerente['nome'] ?>:</strong>
-                <?php endif; ?>
-                <?php $righe =   explode("\n", $messaggio['testo'] ); ?>
-                <p>
-                    <?php foreach ($righe as $riga): ?>
-                        <?php echo $riga.'<br/>' ?>
-                    <?php endforeach; ?>
-                </p>
-            </div>
         </div>
-    <?php endforeach; ?>
-<?php endif; ?>
+    </div>
+
+
+    <div class="divider divider-horizontal "></div>
+
+
+    <div class="flex flex-col max-w-lg min-w-min">
+
+
+
+        <h5 class="text-lg font-bold">Messaggi recenti</h5>
+
+        <?php if ($messaggi == null): ?>
+            <p>Non ci sono messaggi...</p>
+        <?php else: ?>
+        <?php foreach ($messaggi as $messaggio): ?>
+
+        <?php if ($messaggio['id_mittente'] == $utente['id']): ?>
+        <div class="chat chat-end">
+            <div class="chat-header">
+                Tu
+                <?php else: ?>
+                <div class="chat chat-start">
+                    <div class="chat-header">
+                        <?php echo $offerente['nome'] ?>
+
+                        <?php endif; ?>
+                        <time class="text-xs opacity-50"><?php echo $messaggio['data'] ?></time>
+                    </div>
+                    <?php $righe =   explode("\n", $messaggio['testo'] ); ?>
+                    <div class="chat-bubble">
+                        <?php foreach ($righe as $riga): ?>
+                            <?php echo $riga.'<br/>' ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <?php endforeach; ?>
+                <?php endif; ?>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+

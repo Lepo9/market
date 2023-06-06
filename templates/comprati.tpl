@@ -14,47 +14,53 @@
     'oggetti' => true,
     'logout' => true,
     'vendita' => true,
-    'comprati' => false,
+    'comprati' => true,
     'search' => true,
     'pagename' => 'comprati.php',
     'sv' => $ricerca,
-    'mr' => 'Cerca tra i comprati'
+    'mr' => 'Cerca tra i comprati',
+    'corrente' => 'Oggetti comprati'
 
 ]);
 ?>
 
-<h4>Benvenut* <?php echo $utente['nome'] ?></h4>
+<h1 class="text-5xl font-bold text-center">Benvenut* <?php echo $utente['nome'] ?></h1>
 
 <div class="divider"></div>
-<h3><?php echo $messaggio ?></h3>
+<h1 class="text-3xl font-bold mb-4 text-center"><?php echo $messaggio ?></h1>
 
 <?php if ($oggetti == null): ?>
     <p>Non hai ancora comprato nessun oggetto...</p>
 <?php else: ?>
-<table class="table table-striped table-hover">
-    <thead>
-    <tr>
-        <th>Nome</th>
-        <th>Categoria</th>
-        <th>Data dell'acquisto'</th>
-        <th>Visualizza</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($oggetti as $oggetto): ?>
+    <table class="table table-zebra table-lg">
+        <thead>
         <tr>
-            <td><?php echo $oggetto['nome'] ?></td>
-            <td><?php echo $oggetto['categoria'] ?></td>
-            <td><?php echo $oggetto['data_scambio'] ?></td>
-            <td>
-                <!--suppress HtmlUnknownTarget -->
-                <form method="get" action="./oggetto_scambiato.php">
-                    <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id'] ?>">
-                    <button class="btn btn-sm"><i class="icon icon-message"></i></button>
-                </form>
-            </td>
+            <th class="text-xl text-center">Nome</th>
+            <th class="text-xl text-center">Categoria</th>
+            <th class="text-xl text-center">Data dell'acquisto'</th>
+            <th class="text-xl text-center">Visualizza</th>
         </tr>
-    <?php endforeach; ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <?php foreach ($oggetti as $oggetto): ?>
+            <tr>
+                <td class="text-center"><?php echo $oggetto['nome'] ?></td>
+                <td class="text-center"><?php echo $oggetto['categoria'] ?></td>
+                <td class="text-center"><?php echo $oggetto['data_scambio'] ?></td>
+                <td class="text-center">
+                    <!--suppress HtmlUnknownTarget -->
+                    <form method="get" action="./oggetto_scambiato.php">
+                        <input type="hidden" name="id_oggetto" value="<?php echo $oggetto['id'] ?>">
+                        <label tabindex="0" class="btn btn-ghost btn-square mt-4">
+                            <button class="w-10">
+                                <!--suppress HtmlUnknownTarget -->
+                                <img src="./icons/view_ico.svg" alt=""/>
+                            </button>
+                        </label>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
 <?php endif; ?>
