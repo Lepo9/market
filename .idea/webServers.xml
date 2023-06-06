@@ -5,6 +5,13 @@
       <webServer id="bc2cb695-47f6-4a52-8ef1-4e0a6ebf4b34" name="xampp" url="http://localhost/market">
         <fileTransfer mountedRoot="C:\xampp\htdocs\market" accessType="MOUNT" port="0" />
       </webServer>
+      <webServer id="08419cc1-411a-4f89-9da8-1d42c87f62ff" name="winnie" url="http://10.4.55.123/~lepo9/market">
+        <fileTransfer rootFolder="/home/lepo9/public_html/market" accessType="SFTP" host="10.4.55.123" port="22" sshConfigId="7e2dd484-1498-45ce-88a4-b9cc2e4b6bcf" sshConfig="lepo9@10.4.55.123:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

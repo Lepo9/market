@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="mio oggetto. Correzione bug messagggi altrui">
+    <list default="true" id="f798cda4-b747-4a4a-86bf-128875989340" name="Changes" comment="Sistemazione delle righe della chat">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oggetto_scambiato.php" beforeDir="false" afterPath="$PROJECT_DIR$/oggetto_scambiato.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/oggetto.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oggetto.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/oggetto_comprato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oggetto_comprato.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/oggetto_generico.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oggetto_generico.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +61,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Documents/ScuolaSuperiore/Triennio/Informatica/php/market/templates",
+    "last_opened_file_path": "C:/Users/77097428/PhpstormProjects/market",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -83,14 +81,13 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\templates" />
-      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\icons" />
-      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\img" />
+      <recent name="C:\Users\77097428\PhpstormProjects\market" />
+      <recent name="C:\Users\77097428\PhpstormProjects\market\conf" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
+      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\templates" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\conf" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\icons" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market" />
       <recent name="D:\Documents\ScuolaSuperiore\Triennio\Informatica\php\market\img" />
     </key>
@@ -129,7 +126,27 @@
       <workItem from="1685803942509" duration="82000" />
       <workItem from="1685804043373" duration="14410000" />
       <workItem from="1685893717474" duration="2638000" />
-      <workItem from="1685978023584" duration="18873000" />
+    </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1684824103839</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684824103839</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit">
+      <created>1684824144272</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684824144272</updated>
+    </task>
+    <task id="LOCAL-00003" summary="commit">
+      <created>1684824316041</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684824316041</updated>
     </task>
     <task id="LOCAL-00004" summary="login">
       <created>1684827384509</created>
@@ -404,93 +421,19 @@
       <option name="project" value="LOCAL" />
       <updated>1685903729626</updated>
     </task>
-    <task id="LOCAL-00043" summary="Correzione di tutti gli errori e warnings">
-      <created>1685904952712</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1685904952712</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Pagina index">
-      <created>1685983825694</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1685983825694</updated>
-    </task>
-    <task id="LOCAL-00045" summary="login, sistemazione navbar, sistemazione bug login">
-      <created>1685985452666</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1685985452666</updated>
-    </task>
-    <task id="LOCAL-00046" summary="registrazione, correzione bugs">
-      <created>1685986385482</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1685986385482</updated>
-    </task>
-    <task id="LOCAL-00047" summary="i miei oggetti in vendita">
-      <created>1685990100237</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1685990100237</updated>
-    </task>
-    <task id="LOCAL-00048" summary="oggetti comprati">
-      <created>1685990715727</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1685990715727</updated>
-    </task>
-    <task id="LOCAL-00049" summary="vendita di un oggetto">
-      <created>1685992243090</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1685992243090</updated>
-    </task>
-    <task id="LOCAL-00050" summary="ordinamento degli oggetti venduti">
-      <created>1685992479339</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1685992479339</updated>
-    </task>
-    <task id="LOCAL-00051" summary="oggetto generico">
-      <created>1685996463061</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1685996463061</updated>
-    </task>
-    <task id="LOCAL-00052" summary="mio oggetto. Correzione bug messagggi altrui">
-      <created>1685999066135</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1685999066135</updated>
-    </task>
-    <option name="localTasksCounter" value="53" />
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="0bf8cbad-77e9-48df-a72a-525f332ac0df" value="TOOL_WINDOW" />
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="0bf8cbad-77e9-48df-a72a-525f332ac0df">
           <value>
             <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -509,7 +452,6 @@
                   </entry>
                 </map>
               </option>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
             </State>
           </value>
         </entry>
@@ -532,8 +474,23 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="0bf8cbad-77e9-48df-a72a-525f332ac0df" value="TOOL_WINDOW" />
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="il form funziona correttamente. l'immagine viene caricata e salvata" />
+    <MESSAGE value="dimensioni dell'immagini corrette" />
+    <MESSAGE value="presentazione corretta delle immagini" />
+    <MESSAGE value="presentazione delle righe della descrizione" />
+    <MESSAGE value="errori e mantenimento dei campi" />
+    <MESSAGE value="possibilità di eliminare un oggetto" />
+    <MESSAGE value="viene anche eliminata l'immagine dalla memoria" />
+    <MESSAGE value="tasto elimina dinamico" />
+    <MESSAGE value="prima parte della modifica dove i pezzi di codice vengono re_inseriti" />
+    <MESSAGE value="modifica completata correttamente" />
     <MESSAGE value="visualizzata la lista di quelli scambiati" />
     <MESSAGE value="visualizza l'oggetto che è stato scambiato" />
     <MESSAGE value="chat bloccata per scambi già avvenuti" />
@@ -549,17 +506,7 @@
     <MESSAGE value="Aggiunta scritta redirect" />
     <MESSAGE value="index adeguata al login" />
     <MESSAGE value="Sistemazione delle righe della chat" />
-    <MESSAGE value="Correzione di tutti gli errori e warnings" />
-    <MESSAGE value="Pagina index" />
-    <MESSAGE value="login, sistemazione navbar, sistemazione bug login" />
-    <MESSAGE value="registrazione, correzione bugs" />
-    <MESSAGE value="i miei oggetti in vendita" />
-    <MESSAGE value="oggetti comprati" />
-    <MESSAGE value="vendita di un oggetto" />
-    <MESSAGE value="ordinamento degli oggetti venduti" />
-    <MESSAGE value="oggetto generico" />
-    <MESSAGE value="mio oggetto. Correzione bug messagggi altrui" />
-    <option name="LAST_COMMIT_MESSAGE" value="mio oggetto. Correzione bug messagggi altrui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione delle righe della chat" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
